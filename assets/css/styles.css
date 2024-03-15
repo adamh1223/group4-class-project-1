@@ -27,4 +27,36 @@ footer img:hover{
 }
 #footerImg{
     text-align: center;
+
 }
+.lastpage {
+    position: relative;
+    color: white;
+    background-image: url("https://www.yosemite.com/wp-content/uploads/2023/04/yosemite-valley-view-sunrise-istock-545090448-scaled.webp"); /* The image used */
+    
+    height: 500px; /* You must set a specified height */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+  }
+h4 {
+    
+    /* padding-top: 50px;
+    padding-bottom: 50px; */
+    
+    margin: auto;
+    width: 750px;
+    color: black;
+    font-size: 50px;
+   text-align: center;
+   
+    
+}
+.lastUl{
+    padding: 5px;
+    background-color: rgb(223, 198, 198);
+    width: fit-content;
+    font-weight: 700;
+    color: black;
+    font-size: 40px;
+    list-style-type: none;
