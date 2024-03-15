@@ -7,7 +7,36 @@ height: 500px;
     background-repeat: no-repeat; 
     background-size: cover; 
 }
+/* this is for the footer */
+#footerContainer{
+    background-color:#9de3fa;
+    color:rgb(0, 0, 0);
+    
+}
+footer h5{
+    font-family: Arial, Helvetica, sans-serif;
+    height: 30px;
+    text-align: center;
+    font-size: 20px;
+    margin:0;
+}
+footer h5::before{
+    content: "\00A9"
+}
+footer img{
+    height:30px;
+    width: 30px;
+    align-items: center;
+    padding: 10px;
+   
+}
+footer img:hover{
+    cursor:pointer;
+}
+#footerImg{
+    text-align: center;
 
+}
 .lastpage {
     margin-top: 50px;
     position: relative;
@@ -37,4 +66,3 @@ h4 {
     color: black;
     font-size: 40px;
     list-style-type: none;
-}
