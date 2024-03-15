@@ -1,20 +1,26 @@
-
+.second{
+background-image: url("https://www.cincinnati.com/gcdn/-mm-/9e1f6e2ee20f44aa1f3be4f71e9f3e52b6ae2c7e/c=0-110-2121-1303/local/-/media/2020/07/21/USATODAY/usatsports/gettyimages-1145858593.jpg?width=660&height=372&fit=crop&format=pjpg&auto=webp");
+position: relative;
+color: white;
+height: 500px;
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover; 
+}
 
 .lastpage {
+    margin-top: 50px;
     position: relative;
     color: white;
     background-image: url("https://www.yosemite.com/wp-content/uploads/2023/04/yosemite-valley-view-sunrise-istock-545090448-scaled.webp"); /* The image used */
     
-    height: 500px; /* You must set a specified height */
-    background-position: center; /* Center the image */
-    background-repeat: no-repeat; /* Do not repeat the image */
-    background-size: cover; /* Resize the background image to cover the entire container */
+    height: 500px;
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover; 
   }
 h4 {
-    
-    /* padding-top: 50px;
-    padding-bottom: 50px; */
-    
+    padding: 50px;
     margin: auto;
     width: 750px;
     color: black;
