@@ -1,3 +1,39 @@
+/*Modal Style*/
+#modal_body {
+    display: none;
+    position: fixed;
+    z-index: 1; 
+    padding-top: 100px; 
+    left: 50%;
+    right: 50%;
+    transform: translate(-50%, -50%);
+    width: 25%; 
+    height: 25%;
+    overflow: auto;
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    border-radius: 5%;
+    align-content: center;
+    text-align: center;
+}
+
+#modal_button {
+    font-size: 28px;
+    align-items: center;
+    text-align: center;
+    border-radius: 5%;
+}
+
+.modal_button:hover,
+.modal_button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
 .second{
 background-image: url();
 position: relative;
