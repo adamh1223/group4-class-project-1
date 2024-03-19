@@ -120,3 +120,8 @@ h4 {
     font-size: 40px;
     list-style-type: none;
 }
+
+/* css for the section plan your next trip */
+#nextTripContainer{
+  background-image: url("https://t3.gstatic.com/licensed-image?q=tbn:ANd9GcTEQIHOSpnI3yyY1tNWHIoGBlQizTtlrmxgFJvJkvO07wtgA2lRytPyx3D2Dc0fXoMq");
+}
