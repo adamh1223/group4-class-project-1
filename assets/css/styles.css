@@ -102,24 +102,6 @@ footer img:hover {
   background-size: cover;
 }
 h4 {
-<<<<<<< HEAD
-  padding: 50px;
-  margin: auto;
-  width: 750px;
-  color: black;
-  font-size: 50px;
-  text-align: center;
-}
-.lastUl {
-  padding: 5px;
-  background-color: rgb(223, 198, 198);
-  width: fit-content;
-  font-weight: 700;
-  color: black;
-  font-size: 40px;
-  list-style-type: none;
-}
-=======
     padding: 50px;
     margin: auto;
     width: 750px;
@@ -137,5 +119,4 @@ h4 {
     color: black;
     font-size: 40px;
     list-style-type: none;
->>>>>>> 6e6291863b701d2d821a43b1427b553443ab4331
 }
