@@ -1,4 +1,4 @@
-//Modal Script
+//Modal Script Begins
 var modal = document.getElementById("modal_body");
 var mainContent = document.getElementById("container");
 var modalButton = document.getElementById("modal_button");
@@ -14,3 +14,5 @@ modalButton.onclick = function closeModal() {
     modal.style.display = "none";
     mainContent.style.filter = "blur(0px)";
 };
+//Modal Script Ends
+
