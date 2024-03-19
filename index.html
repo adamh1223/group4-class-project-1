@@ -4,7 +4,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="./assets/css/styles.css" rel = "stylesheet">
   <link href="./assets/css/styles.css" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,73 +14,69 @@
 <body>
 
 <!--Header Begins-->
-    <header class="header">
+    
 
-    <!--Modal Prompt-->
-    <div class="modal_body" id="modal_body">
+    <!--Modal Prompt
+
+    <div class="modal_outer">
+     <div class="modal_body" id="modal_body">
       <h2 class="modal_prompt">Welcome to the National Park Planner!</h2>
       <p>Search for a park and we will recommend activities for that area.</p>
       <a href="#search_form"><button id="modal_button">Try now!</button></a>
     </div>
-    
-    <a href="#" class="logo">Parks Planner</a>
-    <nav class="navbar">
-      <a href="#">Planner</a>
-      <a href="#">About</a>
-    </nav>
+    </div>
+    -->
+    <!--Modal Prompt Ends-->
+    <header class="header">
+      <div id="header_content">
+      <a href="#" class="logo">Parks Planner</a>
+      <nav class="navbar">
+        <a href="#">Planner</a>
+        <a href="#">About</a>
+      </nav>
+      </div>
   </header>
-    
-<body>
 
   <div id="container">
   <main>
 
-    <section>
-      <img src="./assets/images/waterfall.jpg" alt="waterfall" class="yosemite-waterfall">
-    </section>
-      <p>text</p>
-      <p>text</p>
-      <button id="try-now" class="try-now">Try Now</button>
-
-    <section id="search_form">
-
-    </section>
-
-    <section>
-   
-    <section id="nextTripContainer">
-      <div id="text">
-        <h3>PLAN YOUR NEXT TRIP!</h3>
-        <div id="Question">
-          <p>Which state are you exploring?</p>
-          <input type="" id="userState">
-        </div>
-          <br>
-        <div id="Question">
-          <label for="legthHike">Do you like short hikes or long hikes?</label>
-            <br>
-          <select name="shortLong" id="hikeLength">
-            <option value="short">Short Hikes</option>
-            <option value="long">Long Hikes</option>
-            <option value="either">Both</option>
-          </select>
-        </div>
-           <br>
-        <div id="Question">
-          <p>What activities are you interested in?</p>
-          <input type="" id="userActivities">
-        </div>
-          <br>
-        <div id="Question">
-          <label for="legthHike">Do you prefer cold weather or warm weather?</label>
-            <br>
-          <select name="coldWarm" id="preferredTemp">
-            <option value="cold">Cold Weather</option>
-            <option value="warm">Warm Weather</option>
-            <option value="either">Both</option>
-          </select>
-        </div>
+    <section class="homepage">
+      <div class="homepage-text">
+        <h2>Plan Your Adventures</h2>
+        <p class="homepage-subtext">We create personalized National Parks plans for you!</p>
+        <p class="homepage-subtext-line-2">Your Adventure awaits</p>
+        <button id="try-now" class="try-now">Try Now</button>
       </div>
+    </section>
+      
+    <section id="nextTripContainer">
+      <div id="search_form">
+      <h3>PLAN YOUR NEXT TRIP!</h3>
+      <p>Which state are you exploring?</p>
+      <input type="" id="userState">
+        <br>
+      <label for="lengthHike">Do you like short hikes or long hikes?</label>
+        <br>
+      <select name="shortLong" id="hikeLength">
+        <option value="short">Short Hikes</option>
+        <option value="long">Long Hikes</option>
+        <option value="either">Both</option>
+      </select>
+      <p>What activities are you interested in?</p>
+      <input type="" id="userActivities">
+        <br>
+      <label for="legthHike">Do you prefer cold weather or warm weather?</label>
+        <br>
+      <select name="coldWarm" id="preferredTemp">
+        <option value="cold">Cold Weather</option>
+        <option value="warm">Warm Weather</option>
+        <option value="either">Both</option>
+      </select>
+
+      <button class="search_button">Search</button>
+
+      </div>
+
     </section>
 
     <section>
@@ -90,20 +85,17 @@
  
     <section class="lastpage">
       <h4>Some Trails We Think You'd Like:</h4>
+      <div class="trail-recommendations">
       <ul>
-        <a href=""><li class = lastUl id="trail_a">Trail A:</li></a> <br>
-        <a href=""><li class = lastUl id="trail_a">Trail B:</li></a> <br>
+        <a href=""><li class = lastUl id="trail_a">Trail A:</li></a>
+        <textarea class="trail_description"></textarea><br>
+        <a href=""><li class = lastUl id="trail_a">Trail B:</li></a>
+        <textarea class="trail_description"></textarea> <br>
         <a href=""><li class = lastUl id="trail_a">Trail C:</li></a>
-        <a href="">
-          <li class=lastUl>Trail A:</li>
-        </a> <br>
-        <a href="">
-          <li class=lastUl>Trail B:</li>
-        </a> <br>
-        <a href="">
-          <li class=lastUl>Trail C:</li>
+        <textarea class="trail_description"></textarea>
         </a>
       </ul>
+    </div>
     </section>
   </main>
 
