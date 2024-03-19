@@ -50,33 +50,41 @@
     </section>
       
     <section id="nextTripContainer">
-      <div id="search_form">
-      <h3>PLAN YOUR NEXT TRIP!</h3>
-      <p>Which state are you exploring?</p>
-      <input type="" id="userState">
+      <div id="text">
+        <h3>PLAN YOUR NEXT TRIP!</h3>
+        <div id="Question">
+          <p>Which state are you exploring?</p>
+          <input type="" id="userState">
+      </div>
         <br>
-      <label for="lengthHike">Do you like short hikes or long hikes?</label>
+      <div id="Question">
+        <label for="lengthHike">Do you like short hikes or long hikes?</label>
+          <br>
+        <select name="shortLong" id="hikeLength">
+          <option value="short">Short Hikes</option>
+          <option value="long">Long Hikes</option>
+          <option value="either">Both</option>
+        </select>
+      </div>
+         <br>
+      <div id="Question">
+        <p>What activities are you interested in?</p>
+        <input type="" id="userActivities">
+      </div>
         <br>
-      <select name="shortLong" id="hikeLength">
-        <option value="short">Short Hikes</option>
-        <option value="long">Long Hikes</option>
-        <option value="either">Both</option>
-      </select>
-      <p>What activities are you interested in?</p>
-      <input type="" id="userActivities">
-        <br>
-      <label for="legthHike">Do you prefer cold weather or warm weather?</label>
-        <br>
-      <select name="coldWarm" id="preferredTemp">
-        <option value="cold">Cold Weather</option>
-        <option value="warm">Warm Weather</option>
-        <option value="either">Both</option>
-      </select>
+      <div id="Question">
+        <label for="legthHike">Do you prefer cold weather or warm weather?</label>
+          <br>
+        <select name="coldWarm" id="preferredTemp">
+          <option value="cold">Cold Weather</option>
+          <option value="warm">Warm Weather</option>
+          <option value="either">Both</option>
+        </select>
 
       <button class="search_button">Search</button>
 
       </div>
-
+    </div>
     </section>
 
     <section>
