@@ -26,7 +26,7 @@ $(document).ready(function () {
 
 /*Function to store trail data to local storage and presist data to the page 
 when user clicks the "Search" button*/
-$(".saveBtn").on("click", function() {
+$(".search_button").on("click", function() {
     var trailInfo = $(this).siblings(".trail_description").val();
     var trail = $(this).parent().attr("id");
 
