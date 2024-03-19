@@ -16,3 +16,28 @@ modalButton.onclick = function closeModal() {
 };
 //Modal Script Ends
 
+
+/*Call to jQuery to ensure that code isn't run until the browser has finished 
+rendering all the elements in the html*/
+$(document).ready(function () {
+
+
+//Local Storage Script Begins
+
+/*Function to store trail data to local storage and presist data to the page 
+when user clicks the "Search" button*/
+$(".saveBtn").on("click", function() {
+    var trailInfo = $(this).siblings(".trail_description").val();
+    var trail = $(this).parent().attr("id");
+
+    //Save trail info retrieved by API and corresponding trail ID to local storage
+    localStorage.setItem(trails, trailInfo);
+})
+
+  /*Get any user input that was saved in localStorage and set the 
+  values of the corresponding textarea elements*/
+  $("#trail_a .trail_description").val(localStorage.getItem("trail_a"));
+  $("#trail_b .trail_description").val(localStorage.getItem("trail_b"));
+  $("#trail_c .trail_description").val(localStorage.getItem("trail_c"));
+});
+//Local Storage Script Ends
