@@ -31,7 +31,7 @@ $(".saveBtn").on("click", function() {
     var trail = $(this).parent().attr("id");
 
     //Save trail info retrieved by API and corresponding trail ID to local storage
-    localStorage.setItem(trails, trailInfo);
+    localStorage.setItem(trail, trailInfo);
 })
 
   /*Get any user input that was saved in localStorage and set the 
