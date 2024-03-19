@@ -286,6 +286,31 @@ h4 {
 }
 
 /* css for the section plan your next trip */
+<<<<<<< HEAD
 #nextTripContainer {
   background-image: url("https://t3.gstatic.com/licensed-image?q=tbn:ANd9GcTEQIHOSpnI3yyY1tNWHIoGBlQizTtlrmxgFJvJkvO07wtgA2lRytPyx3D2Dc0fXoMq");
 }
+=======
+#nextTripContainer{
+  background-image: url("https://wallup.net/wp-content/uploads/2019/09/763385-kananaskis-lakes-canada-lake-mountains-trees-landscape-panorama-1.jpg");
+  width: 100%;
+  height: 100vh;
+
+}
+h3{
+  font-size: 30px;
+  color:white;
+  text-align: center;
+  padding-bottom: 30px;
+}
+#text{
+  font-size: 20px;
+  margin: 10px;
+  padding:30px;
+  color:white;
+  line-height: 50px;
+}
+#Question{
+  line-height: 20px;
+}
+>>>>>>> 4a5a1cdc5d0d523bd53d33be9ec6ac4c332b0e08
