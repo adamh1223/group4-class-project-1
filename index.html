@@ -1,16 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Class Project 1</title>
   <link href="./assets/css/styles.css" rel = "stylesheet">
+  <link href="./assets/css/styles.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <title>Class Project 1</title>
 </head>
 
 <body>
 
 <!--Header Begins-->
-  <header>
+    <header class="header">
 
     <!--Modal Prompt-->
     <div class="modal_body" id="modal_body">
@@ -18,34 +23,73 @@
       <p>Search for a park and we will recommend activities for that area.</p>
       <a href="#search_form"><button id="modal_button">Try now!</button></a>
     </div>
-
+    
+    <a href="#" class="logo">Parks Planner</a>
+    <nav class="navbar">
+      <a href="#">Planner</a>
+      <a href="#">About</a>
+    </nav>
   </header>
+    
+<body>
 
   <div id="container">
   <main>
 
+    <section>
+      <img src="./assets/images/trail-pic.jpg" alt="trail in forest" class="trail-pic">
 
     <section id="search_form">
 
     </section>
 
-
     <section>
    
-    </section>
+    <section id="nextTripContainer">
+      <h3>PLAN YOUR NEXT TRIP!</h3>
+      <p>Which state are you exploring?</p>
+      <input type="" id="userState">
+        <br>
+      <label for="legthHike">Do you like short hikes or long hikes?</label>
+        <br>
+      <select name="shortLong" id="hikeLength">
+        <option value="short">Short Hikes</option>
+        <option value="long">Long Hikes</option>
+        <option value="either">Both</option>
+      </select>
+      <p>What activities are you interested in?</p>
+      <input type="" id="userActivities">
+        <br>
+      <label for="legthHike">Do you prefer cold weather or warm weather?</label>
+        <br>
+      <select name="coldWarm" id="preferredTemp">
+        <option value="cold">Cold Weather</option>
+        <option value="warm">Warm Weather</option>
+        <option value="either">Both</option>
+      </select>
+
+      </section>
 
 
     <section>
 
     </section>
-
-
+ 
     <section class="lastpage">
       <h4>Some Trails We Think You'd Like:</h4>
       <ul>
         <a href=""><li class = lastUl id="trail_a">Trail A:</li></a> <br>
         <a href=""><li class = lastUl id="trail_a">Trail B:</li></a> <br>
         <a href=""><li class = lastUl id="trail_a">Trail C:</li></a>
+        <a href="">
+          <li class=lastUl>Trail A:</li>
+        </a> <br>
+        <a href="">
+          <li class=lastUl>Trail B:</li>
+        </a> <br>
+        <a href="">
+          <li class=lastUl>Trail C:</li>
+        </a>
       </ul>
     </section>
   </main>
@@ -55,12 +99,13 @@
   <footer id="footerContainer">
     <h5 id="footerHeader">Parks Planner</h5>
     <div id="footerImg">
-        <img  href="#"  src="./assets/images/facebook_icon_logo.png">
-        <img  href="#" src="./assets/images/gmail_icon_logo.png">
-        <img  href="#" src="./assets/images/instagram_icon_logo.png">
-        <img  href="#" src="./assets/images/linkedIn_icon_logo.png">
+      <img href="#" src="./assets/images/facebook_icon_logo.png">
+      <img href="#" src="./assets/images/gmail_icon_logo.png">
+      <img href="#" src="./assets/images/instagram_icon_logo.png">
+      <img href="#" src="./assets/images/linkedIn_icon_logo.png">
     </div>
   </footer>
+      
   </div>
   
 
@@ -69,5 +114,8 @@
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 
   <script src="./assets/js/main.js"></script>
+  
+    <script src="./assets/js/main.js"></script>
 </body>
+
 </html>
