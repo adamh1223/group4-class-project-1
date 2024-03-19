@@ -1,3 +1,7 @@
+:root {
+  --bronze: #C8A47E;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -6,7 +10,7 @@
 }
 
 .header {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -16,6 +20,14 @@
   justify-content: space-between;
   align-items: center;
   z-index: 100;
+}
+button {
+  width: 130px;
+  height: 50px;
+  border-radius: 25px;
+  border: none;
+  background-color: var(--bronze);
+  color: white;
 }
 
 .logo {
@@ -67,6 +79,7 @@
 #footerContainer {
   background-color: #9de3fa;
   color: rgb(0, 0, 0);
+  min-width: 800px;
 }
 footer h5 {
   font-family: Arial, Helvetica, sans-serif;
@@ -90,21 +103,9 @@ footer img:hover {
 #footerImg {
   text-align: center;
 }
-.lastpage {
-  margin-top: 50px;
-  position: relative;
-  color: white;
-  background-image: url("https://www.yosemite.com/wp-content/uploads/2023/04/yosemite-valley-view-sunrise-istock-545090448-scaled.webp"); /* The image used */
 
-  height: 500px;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
 h4 {
-<<<<<<< HEAD
-  padding: 50px;
-  margin: auto;
+  padding: 30px 0 0 0;
   width: 750px;
   color: black;
   font-size: 50px;
@@ -119,22 +120,63 @@ h4 {
   font-size: 40px;
   list-style-type: none;
 }
-=======
-    padding: 50px;
-    margin: auto;
-    width: 750px;
-    color: black;
-    font-size: 50px;
-   text-align: center;
-   
-    
+.homepage {
+  position: relative;
+  color: white;
+  background-image: url("https://images.squarespace-cdn.com/content/v1/5ec321c2af33de48734cc929/1fbaf342-92a5-434d-94af-69585b41c366/image-asset.jpeg"); /* The image used */
+
+  height: 1000px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-.lastUl{
-    padding: 5px;
-    background-color: #C1CFEA;
-    width: fit-content;
-    font-weight: 700;
-    color: black;
-    font-size: 40px;
-    list-style-type: none;
->>>>>>> 6e6291863b701d2d821a43b1427b553443ab4331
+.lastpage {
+  margin-top: 50px;
+  position: relative;
+  color: white;
+  background-image: url("https://www.yosemite.com/wp-content/uploads/2023/04/yosemite-valley-view-sunrise-istock-545090448-scaled.webp"); /* The image used */
+
+  height: 500px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.homepage, .lastpage {
+  position: relative;
+  color: white;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+}
+.homepage-text {
+  display: grid;
+  padding-top: 500px;
+  width: fit-content;
+  font-size: 50px;
+  text-align: center;
+}
+.try-now {
+  margin: auto;
+  justify-content: center;
+}
+.homepage-subtext {
+  font-size: 30px;
+  margin: 40px 0 0 0;
+  font-weight: 200;
+}
+.homepage-subtext-line-2 {
+  font-size: 30px;
+  font-weight: 200;
+  margin: 0 0 40px 0;
+}
+.trail-recommendations {
+  width: 100%;
+  padding: 0 0 0 25px;
+}
