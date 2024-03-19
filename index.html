@@ -4,7 +4,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="./assets/css/styles.css" rel = "stylesheet">
   <link href="./assets/css/styles.css" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,20 +17,24 @@
     <header class="header">
 
     <!--Modal Prompt-->
+
+    <div class="modal_outer">
      <div class="modal_body" id="modal_body">
       <h2 class="modal_prompt">Welcome to the National Park Planner!</h2>
       <p>Search for a park and we will recommend activities for that area.</p>
       <a href="#search_form"><button id="modal_button">Try now!</button></a>
     </div>
+    </div>
+    <!--Modal Prompt Ends-->
     
+    <div id="header_content">
     <a href="#" class="logo">Parks Planner</a>
     <nav class="navbar">
       <a href="#">Planner</a>
       <a href="#">About</a>
     </nav>
+    </div>
   </header>
-    
-<body>
 
   <div id="container">
   <main>
@@ -45,14 +48,8 @@
       </div>
     </section>
       
-
-    <section id="search_form">
-
-    </section>
-
-    <section>
-   
     <section id="nextTripContainer">
+      <div id="search_form">
       <h3>PLAN YOUR NEXT TRIP!</h3>
       <p>Which state are you exploring?</p>
       <input type="" id="userState">
@@ -77,7 +74,9 @@
 
       <button class="search_button">Search</button>
 
-      </section>
+      </div>
+
+    </section>
 
 
     <section>
@@ -88,9 +87,21 @@
       <h4>Some Trails We Think You'd Like:</h4>
       <div class="trail-recommendations">
       <ul>
-        <a href=""><li class = lastUl id="trail_a">Trail A:</li></a> <br>
-        <a href=""><li class = lastUl id="trail_a">Trail B:</li></a> <br>
+        <a href=""><li class = lastUl id="trail_a">Trail A:</li></a>
+        <textarea class="trail_description"></textarea><br>
+        <a href=""><li class = lastUl id="trail_a">Trail B:</li></a>
+        <textarea class="trail_description"></textarea> <br>
         <a href=""><li class = lastUl id="trail_a">Trail C:</li></a>
+        <textarea class="trail_description"></textarea>
+        <a href="">
+          <li class=lastUl>Trail A:</li>
+        </a> <br>
+        <a href="">
+          <li class=lastUl>Trail B:</li>
+        </a> <br>
+        <a href="">
+          <li class=lastUl>Trail C:</li>
+        </a>
       </ul>
     </div>
     </section>
