@@ -6,23 +6,23 @@
   <title>Class Project 1</title>
   <link href="./assets/css/styles.css" rel = "stylesheet">
 </head>
-<body>
 
+<body>
 
 <!--Header Begins-->
   <header>
 
+    <!--Modal Prompt-->
+    <div class="modal_body" id="modal_body">
+      <h2 class="modal_prompt">Welcome to the Park Planner!</h2>
+      <p>Enter a city and we will recommend outdoor activities for that area.</p>
+      <a href="#search_form"><button id="modal_button">Try now!</button></a>
+    </div>
 
   </header>
 
-
+  <div id="container">
   <main>
-    <!--Modal Prompt-->
-    <div id="modal_body">
-        <h2 class="modal_prompt">Welcome to the Park Planner!</h2>
-        <p>Enter a city and we will recommend outdoor activities for that area.</p>
-        <a href="#search_form"><button id="modal_button">Try now!</button></a>
-    </div>
 
 
     <section id="search_form">
@@ -40,7 +40,7 @@
     </section>
 
 
-    <section class = "lastpage">
+    <section class="lastpage">
       <h4>Some Trails We Think You'd Like:</h4>
       <ul>
         <a href=""><li class = lastUl>Trail A:</li></a> <br>
@@ -61,6 +61,7 @@
         <img  href="#" src="./assets/images/linkedIn_icon_logo.png">
     </div>
   </footer>
+  </div>
   
   <script src="./assets/js/main.js"></script>
 </body>

@@ -2,8 +2,7 @@
 #modal_body {
     display: none;
     position: fixed;
-    z-index: 1; 
-    padding-top: 100px; 
+    z-index: 1;
     left: 50%;
     right: 50%;
     transform: translate(-50%, -50%);
@@ -20,7 +19,7 @@
 }
 
 #modal_button {
-    font-size: 28px;
+    font-size: 25px;
     align-items: center;
     text-align: center;
     border-radius: 5%;
@@ -43,12 +42,14 @@ height: 500px;
     background-repeat: no-repeat; 
     background-size: cover; 
 }
+
+
 /* this is for the footer */
 #footerContainer{
     background-color:#9de3fa;
-    color:rgb(0, 0, 0);
-    
+    color:rgb(0, 0, 0);    
 }
+
 footer h5{
     font-family: Arial, Helvetica, sans-serif;
     height: 30px;
@@ -56,23 +57,27 @@ footer h5{
     font-size: 20px;
     margin:0;
 }
+
 footer h5::before{
     content: "\00A9"
 }
+
 footer img{
     height:30px;
     width: 30px;
     align-items: center;
-    padding: 10px;
-   
+    padding: 10px;   
 }
+
 footer img:hover{
     cursor:pointer;
 }
+
 #footerImg{
     text-align: center;
 
 }
+
 .lastpage {
     margin-top: 50px;
     position: relative;
@@ -84,6 +89,7 @@ footer img:hover{
     background-repeat: no-repeat; 
     background-size: cover; 
   }
+
 h4 {
     padding: 50px;
     margin: auto;
@@ -102,3 +108,4 @@ h4 {
     color: black;
     font-size: 40px;
     list-style-type: none;
+}
