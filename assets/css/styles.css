@@ -125,7 +125,7 @@ footer img:hover{
   align-items: center;
   z-index: 100;
 }
-button {
+.try-now {
   width: 130px;
   height: 50px;
   border-radius: 25px;
@@ -245,14 +245,9 @@ h4 {
 .trail-recommendations {
   width: 100%;
   padding: 0 0 0 25px;
-
-
-
   margin-top: 50px;
   position: relative;
   color: white;
-  background-image: url("https://www.yosemite.com/wp-content/uploads/2023/04/yosemite-valley-view-sunrise-istock-545090448-scaled.webp"); /* The image used */
-
   height: 500px;
   background-position: center;
   background-repeat: no-repeat;
