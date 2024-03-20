@@ -333,3 +333,18 @@ h3{
   grid-row-start: 1;
   grid-row-end: 2;
 }
+.search_button{
+  font-size: 30px;
+  margin: 50px auto;
+  display: flex;
+  cursor: pointer;
+  border-radius: 20px;
+  width: 150px;
+  padding: 5px;
+  justify-content: center;
+  border-style: hidden;
+}
+.search_button:hover {
+  background-color: var(--bronzeRGBTransparent);
+  color: white;
+}
