@@ -65,15 +65,6 @@ a {
   }
 }
 
-.second {
-  background-image: url();
-  position: relative;
-  color: white;
-  height: 500px;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
 
 /* this is for the footer */
 #footerContainer {
@@ -201,8 +192,7 @@ h4 {
   position: relative;
   color: white;
   background-image: url("https://www.yosemite.com/wp-content/uploads/2023/04/yosemite-valley-view-sunrise-istock-545090448-scaled.webp"); /* The image used */
-
-  height: 500px;
+  height: 800px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -262,8 +252,6 @@ h4 {
   position: relative;
   color: white;
   background-image: url("https://www.yosemite.com/wp-content/uploads/2023/04/yosemite-valley-view-sunrise-istock-545090448-scaled.webp"); /* The image used */
-
-  height: 500px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
