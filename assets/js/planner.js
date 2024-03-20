@@ -1,5 +1,7 @@
 function userInfo() {
   var login = [];
+  var firstName = $(".first_name").val();
+  var lastName = $(".last_name").val();
   var user = $(".user").val();
   var password = $(".password").val();
   $(".user").val("");
