@@ -70,6 +70,9 @@ a {
 #footerContainer {
   background-color: #9de3fa;
   color: rgb(0, 0, 0);
+ display: grid;
+ grid-template-columns: 1fr 1fr 1fr;
+ grid-template-rows: 1fr;
 }
 
 footer h5 {
@@ -97,6 +100,10 @@ footer img:hover {
 
 #footerImg {
   text-align: center;
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 2;
 }
 * {
   margin: 0;
@@ -303,4 +310,26 @@ h3{
   border-radius: 10px;
   font-size: 30px;
   width: 40%;
+}
+
+/* another css for the footer */
+.parkPlannerLogo{
+  height: 200px;
+  width: 400px;
+  margin-left: 30px;
+  align-items: center;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 2;
+
+}
+.contact{
+  font-size: 20px;
+  text-align: center;
+  margin-top: 30px;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
 }
