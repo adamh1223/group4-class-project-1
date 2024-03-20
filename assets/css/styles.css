@@ -113,8 +113,10 @@ footer img:hover {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
-.header {
-  position: fixed;
+/* Header */
+
+#header_content {
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
@@ -164,12 +166,16 @@ footer img:hover {
   width: 100%;
 }
 
-.trail-pic {
-  height: 100vh;
-  width: 100%;
-}
-
 /* End of Header */
+
+.try-now {
+  width: 130px;
+  height: 50px;
+  border-radius: 25px;
+  border: none;
+  background-color: var(--bronze);
+  color: white;
+}
 
 h4 {
   padding: 30px 0 0 0;
@@ -203,8 +209,7 @@ h4 {
   position: relative;
   color: white;
   background-image: url("https://www.yosemite.com/wp-content/uploads/2023/04/yosemite-valley-view-sunrise-istock-545090448-scaled.webp"); /* The image used */
-
-  height: 500px;
+  height: 800px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -231,8 +236,12 @@ h4 {
   text-align: center !important;
 }
 .try-now {
-  margin: auto !important;
-  justify-content: center !important;
+  margin: auto;
+  justify-content: center;
+  cursor: pointer;
+}
+.try-now:hover {
+  background-color: var(--bronzeRGBTransparent);
 }
 .homepage-subtext {
   font-size: 30px !important;
@@ -286,4 +295,31 @@ h4 {
 /* css for the section plan your next trip */
 #nextTripContainer {
   background-image: url("https://t3.gstatic.com/licensed-image?q=tbn:ANd9GcTEQIHOSpnI3yyY1tNWHIoGBlQizTtlrmxgFJvJkvO07wtgA2lRytPyx3D2Dc0fXoMq");
+
+  width: 100%;
+  height: 100vh;
+}
+h3 {
+  padding: 40px 0 0 0;
+  color: rgb(255, 255, 255);
+  font-size: 50px;
+  text-align: center;
+}
+#text {
+  margin: 10px;
+  padding: 30px;
+  color: white;
+  line-height: 50px;
+}
+#Question {
+  line-height: 60px;
+  padding-top: 0;
+  font-size: 30px;
+  padding-left: 70px;
+}
+.box {
+  border-style: hidden;
+  border-radius: 10px;
+  font-size: 30px;
+  width: 40%;
 }
