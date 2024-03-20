@@ -78,6 +78,9 @@ a {
 #footerContainer {
   background-color: #9de3fa;
   color: rgb(0, 0, 0);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
 }
 
 footer h5 {
@@ -105,6 +108,10 @@ footer img:hover {
 
 #footerImg {
   text-align: center;
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 2;
 }
 * {
   margin: 0;
@@ -164,6 +171,22 @@ footer img:hover {
 
 .navbar a:hover::before {
   width: 100%;
+}
+
+@media (min-width: 1275px) {
+  .logo {
+    color: black;
+  }
+}
+@media (max-width: 645px) {
+  #header_content {
+    flex-direction: column;
+    padding: 40px 20px;
+  }
+
+  .navbar a {
+    margin: 10px;
+  }
 }
 
 /* End of Header */
