@@ -36,9 +36,10 @@ document.getElementById("search_form").addEventListener("submit", function(event
     //.then function for API response
     .then(function(response) {
 
-        if (response.ok) {response.json().then(function(data) {
+        if (response.ok) {response.json()
+            .then(function(data) {
             npsDisplay(data);
-            console.log(data)
+            console.log(data);
         });
     
         } else {alert("Error: " + response.statusText);
@@ -53,4 +54,44 @@ document.getElementById("search_form").addEventListener("submit", function(event
 
 //Display NPS API data on the page
 function npsDisplay(data) {
-}
+    var parkInfoContainer = document.getElementById("NPS_results");
+    parkInfoContainer.innerHTML = "";
+
+            //Loop through the API data
+            for(var i=0; i<data.length; i++) {
+            var parkName = document.createElement("h3");
+            var parkActivities = document.createElement("p");
+
+            parkName.textContent = data[i].fullName;
+            parkActivities.textContent = data[i].activities;
+
+            parkInfoContainer.append(parkName);
+            parkInfoContainer.append(parkActivities);
+            }
+        };
+
+
+/*Call to jQuery to ensure that code isn't run until the browser has finished 
+rendering all the elements in the html*/
+// $(document).ready(function () {
+
+
+//Local Storage Script Begins
+
+/*Function to store trail data to local storage and presist data to the page 
+when user clicks the "Search" button*/
+// $(".search_button").on("click", function() {
+//     var parkInfo = $(this).siblings(".trail_description").val();
+//     var park = $(this).parent().attr("id");
+
+    //Save trail info retrieved by API and corresponding trail ID to local storage
+    // localStorage.setItem(park, parkInfo);
+// })
+
+  /*Get any user input that was saved in localStorage and set the 
+  values of the corresponding textarea elements*/
+//   $("#trail_a .trail_description").val(localStorage.getItem("trail_a"));
+//   $("#trail_b .trail_description").val(localStorage.getItem("trail_b"));
+//   $("#trail_c .trail_description").val(localStorage.getItem("trail_c"));
+// });
+//Local Storage Script Ends
