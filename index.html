@@ -46,6 +46,55 @@
       margin-top: 10px;
       white-space: pre-wrap;
     }
+
+    /* The Modal (background) */
+    .modal {
+      display: none;
+      /* Hidden by default */
+      position: fixed;
+      /* Stay in place */
+      z-index: 1;
+      /* Sit on top */
+      left: 0;
+      top: 0;
+      width: 100%;
+      /* Full width */
+      height: 100%;
+      /* Full height */
+      overflow: auto;
+      /* Enable scroll if needed */
+      background-color: rgb(0, 0, 0);
+      /* Fallback color */
+      background-color: rgba(0, 0, 0, 0.4);
+      /* Black w/ opacity */
+      padding-top: 60px;
+    }
+
+    /* Modal Content/Box */
+    .modal-content {
+      background-color: #fefefe;
+      margin: 5% auto;
+      /* 5% from the top and centered */
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+      /* Could be more or less, depending on screen size */
+    }
+
+    /* The Close Button */
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+    }
   </style>
 </head>
 
@@ -61,6 +110,15 @@
   <div id="park-info">
     <h2>State Parks in the Selected State</h2>
     <ul id="park-list"></ul>
+  </div>
+
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <div id="modal-content"></div>
+    </div>
   </div>
 
   <script>
@@ -109,15 +167,18 @@
           listItem.innerHTML = `
             <strong><a href="${park.url}" target="_blank">${park.fullName}</a></strong><br>
             ${park.description}
-            <button class="trail-button" onclick="findTrails('${park.latitude}', '${park.longitude}', this)">Find Trails Nearby</button>
-            <div class="trail-info"></div>
+            <button class="trail-button" onclick="openModal('${park.latitude}', '${park.longitude}')">Find Trails Nearby</button>
           `;
           parkList.appendChild(listItem);
         });
       }
     }
 
-    async function findTrails(latitude, longitude, button) {
+    async function openModal(latitude, longitude) {
+      const modal = document.getElementById("myModal");
+      const modalContent = document.getElementById("modal-content");
+      modal.style.display = "block";
+
       const apiUrl =
         `https://trailapi-trailapi.p.rapidapi.com/activity/?lat=${latitude}&lon=${longitude}&radius=25&q-activities_activity_type_name_eq=hiking`;
       const options = {
@@ -128,19 +189,12 @@
         }
       };
 
-      console.log("Fetching trails from:", apiUrl);
-
       try {
         const response = await fetch(apiUrl, options);
-        console.log("Response status:", response.status);
         const result = await response.json();
-        console.log("Received result:", result);
-
-        const trailInfoDiv = button.nextElementSibling;
-        trailInfoDiv.innerHTML = ''; // Clear previous content
-
-        if (result && Object.keys(result).length > 0) {
-          const trails = Object.values(result); // Get an array of all trails
+        if (Object.keys(result).length > 0) {
+          modalContent.innerHTML = '';
+          const trails = Object.values(result);
           trails.forEach(trail => {
             const trailData = {
               name: trail.name,
@@ -154,24 +208,41 @@
             };
             const trailElement = document.createElement('div');
             trailElement.innerHTML = `
-          <strong>Name:</strong> ${trailData.name}<br>
-          <strong>City:</strong> ${trailData.city}<br>
-          <strong>State:</strong> ${trailData.state}<br>
-          <strong>Country:</strong> ${trailData.country}<br>
-          <strong>Description:</strong> ${trailData.description}<br>
-          <strong>Directions:</strong> ${trailData.directions}<br>
-          <strong>Latitude:</strong> ${trailData.lat}<br>
-          <strong>Longitude:</strong> ${trailData.lon}<br>
-          <hr>
-        `;
-            trailInfoDiv.appendChild(trailElement);
+              <strong>Name:</strong> ${trailData.name}<br>
+              <strong>City:</strong> ${trailData.city}<br>
+              <strong>State:</strong> ${trailData.state}<br>
+              <strong>Country:</strong> ${trailData.country}<br>
+              <strong>Description:</strong> ${trailData.description}<br>
+              <strong>Directions:</strong> ${trailData.directions}<br>
+              <strong>Latitude:</strong> ${trailData.lat}<br>
+              <strong>Longitude:</strong> ${trailData.lon}<br>
+              <hr>
+            `;
+            modalContent.appendChild(trailElement);
           });
         } else {
-          trailInfoDiv.textContent = 'No hiking trails found nearby.';
+          modalContent.textContent = 'No hiking trails found nearby.';
         }
       } catch (error) {
         console.error(error);
         alert('There was a problem fetching hiking trails. Please try again later.');
+      }
+    }
+
+    // Get the <span> element that closes the modal
+    const span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+      const modal = document.getElementById("myModal");
+      modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function (event) {
+      const modal = document.getElementById("myModal");
+      if (event.target == modal) {
+        modal.style.display = "none";
       }
     }
   </script>
