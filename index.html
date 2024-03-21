@@ -137,8 +137,38 @@
         console.log("Received result:", result);
 
         const trailInfoDiv = button.nextElementSibling;
-        trailInfoDiv.innerHTML = JSON.stringify(result, null, 2);
+        trailInfoDiv.innerHTML = ''; // Clear previous content
 
+        if (result && Object.keys(result).length > 0) {
+          const trails = Object.values(result); // Get an array of all trails
+          trails.forEach(trail => {
+            const trailData = {
+              name: trail.name,
+              city: trail.city,
+              state: trail.state,
+              country: trail.country,
+              description: trail.description,
+              directions: trail.directions,
+              lat: trail.lat,
+              lon: trail.lon
+            };
+            const trailElement = document.createElement('div');
+            trailElement.innerHTML = `
+          <strong>Name:</strong> ${trailData.name}<br>
+          <strong>City:</strong> ${trailData.city}<br>
+          <strong>State:</strong> ${trailData.state}<br>
+          <strong>Country:</strong> ${trailData.country}<br>
+          <strong>Description:</strong> ${trailData.description}<br>
+          <strong>Directions:</strong> ${trailData.directions}<br>
+          <strong>Latitude:</strong> ${trailData.lat}<br>
+          <strong>Longitude:</strong> ${trailData.lon}<br>
+          <hr>
+        `;
+            trailInfoDiv.appendChild(trailElement);
+          });
+        } else {
+          trailInfoDiv.textContent = 'No hiking trails found nearby.';
+        }
       } catch (error) {
         console.error(error);
         alert('There was a problem fetching hiking trails. Please try again later.');
