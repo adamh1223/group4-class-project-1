@@ -59,13 +59,17 @@ function npsDisplay(data) {
 
             //Loop through the API data
             for(var i=0; i<data.length; i++) {
-            var parkName = document.createElement("h3");
+            var parkUrl = data[i].url;
+            var parkName = data[i].fullName;
+
+            var parkNameUrl = document.createElement("a");
             var parkActivities = document.createElement("p");
 
-            parkName.textContent = data[i].fullName;
+            parkNameUrl.setAttribute("href", parkUrl);
+            parkNameUrl.textContent = parkName;
             parkActivities.textContent = data[i].activities;
 
-            parkInfoContainer.append(parkName);
+            parkInfoContainer.append(parkNameUrl);
             parkInfoContainer.append(parkActivities);
             }
         };
