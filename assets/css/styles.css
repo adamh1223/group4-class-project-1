@@ -29,6 +29,7 @@ a {
 
 #modal_body {
   width: 25%;
+  display: none;
   overflow: auto;
   background-color: #fefefea3;
   padding: 20px;
@@ -63,7 +64,7 @@ a {
   transition: 0.3s;
 }
 
-/*Modal Button Animation effects*/
+/*Button Animation Effects*/
 @keyframes pulse {
   0% {
     transform: scale(1);
@@ -110,6 +111,10 @@ a {
   font-size: 20px;
 }
 
+.try-now:hover {
+
+}
+
 .logo {
   font-size: 36px;
   color: #fff;
@@ -154,7 +159,6 @@ a {
     margin: 10px;
   }
 }
-/* End of Header */
 
 .try-now {
   width: 130px;
@@ -163,6 +167,15 @@ a {
   border: none;
   background-color: var(--bronze);
   color: white;
+  margin: auto;
+  justify-content: center;
+  cursor: pointer;
+}
+  
+.try-now:hover {
+  background-color: var(--bronzeRGBTransparent);
+  animation: pulse 1s infinite;
+  transition: 0.3s;
 }
 
 .homepage {
@@ -206,16 +219,6 @@ a {
   width: fit-content !important;
   font-size: 50px !important;
   text-align: center !important;
-}
-
-.try-now {
-  margin: auto;
-  justify-content: center;
-  cursor: pointer;
-}
-
-.try-now:hover {
-  background-color: var(--bronzeRGBTransparent);
 }
 
 .homepage-subtext {
