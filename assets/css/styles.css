@@ -6,8 +6,9 @@ a {
   text-decoration: none;
 }
 
-/*Modal Style*/
+/*Welcome Modal Style*/
 .modal_outer {
+  z-index: 1;
   display: none;
   position: fixed;
   top: 0;
@@ -20,7 +21,6 @@ a {
 }
 
 #modal_body {
-  z-index: 1;
   width: 25%;
   overflow: auto;
   background-color: #fefefea3;
@@ -37,10 +37,15 @@ a {
 }
 
 #modal_button {
+  color: white;
   font-size: 25px;
   text-align: center;
   margin: 3% 0 5% 0;
+  padding: 4px 10px 4px 10px;
   transition: 0.3s;
+  border: none;
+  border-radius: 25px;
+  background-color: var(--bronze);
 }
 
 #modal_button:hover,
