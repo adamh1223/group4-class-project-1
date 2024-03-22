@@ -1,22 +1,22 @@
 //Modal Script Begins
-// var modal = document.getElementById("modal_body");
-// var mainContent = document.getElementById("container");
-// var headerContent = document.getElementById("header_content");
-// var modalButton = document.getElementById("modal_button");
+var modal = document.getElementById("modal_body");
+var mainContent = document.getElementById("container");
+var headerContent = document.getElementById("header_content");
+var modalButton = document.getElementById("modal_button");
 
-//Open the modal on page load
-// window.onload = function displayModal() {
-//     modal.style.display = "block";
-//     mainContent.style.filter = "blur(4px)";
-//     headerContent.style.filter = "blur(4px)";    
-// };
+// Open the modal on page load
+window.onload = function displayModal() {
+    modal.style.display = "block";
+    mainContent.style.filter = "blur(4px)";
+    headerContent.style.filter = "blur(4px)";    
+};
 
-//Close the modal on button click
-// modalButton.onclick = function closeModal() {
-//     modal.style.display = "none";
-//     mainContent.style.filter = "blur(0px)";
-//     headerContent.style.filter = "blur(0px)";
-// };
+// Close the modal on button click
+modalButton.onclick = function closeModal() {
+    modal.style.display = "none";
+    mainContent.style.filter = "blur(0px)";
+    headerContent.style.filter = "blur(0px)";
+};
 //Modal Script Ends
 
 
@@ -59,15 +59,15 @@ function npsDisplay(data) {
 
             //Loop through the API data
             for(var i=0; i<data.length; i++) {
-            var parkUrl = data[i].url;
-            var parkName = data[i].fullName;
+            var parkUrl = data.data[i].url;
+            var parkName = data.data[i].fullName;
 
             var parkNameUrl = document.createElement("a");
             var parkActivities = document.createElement("p");
 
             parkNameUrl.setAttribute("href", parkUrl);
             parkNameUrl.textContent = parkName;
-            parkActivities.textContent = data[i].activities;
+            parkActivities.textContent = data.data[i].activities;
 
             parkInfoContainer.append(parkNameUrl);
             parkInfoContainer.append(parkActivities);

@@ -9,6 +9,7 @@ a {
 
 /*Modal Style*/
 .modal_outer {
+  z-index: 1;
   display: none;
   position: fixed;
   top: 0;
@@ -21,7 +22,6 @@ a {
 }
 
 #modal_body {
-  z-index: 1;
   width: 25%;
   overflow: auto;
   background-color: #fefefea3;
