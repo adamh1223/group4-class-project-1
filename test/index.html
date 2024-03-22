@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./assets/css/styles.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <title>Class Project 1</title>
+</head>
+
+<body>
+
+
+  <!-- The Modal -->
+<div class="modal fade" id="register" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class=" d-flex flex-column">
+        <p class="fs-6 mb-2 fw-bold">User Name:</p>
+        <input class="user w-50 s-6 mb-3 city_input" type="text" />
+      </div>
+      <div class=" d-flex flex-column">
+        <p class="fs-6 mb-2 fw-bold">Password:</p>
+        <input class="password w-50 s-6 mb-3 city_input" type="password" />
+      </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary new_user">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--Header Begins>
+    
+
+    
+
+    <div class="modal_outer">
+     <div class="modal_body" id="modal_body">
+        <h2 class="modal_prompt">Welcome to the National Park Planner!</h2>
+        <p>Search for a park and we will recommend activities for that area.</p>
+        <a href="#search_form"><button id="modal_button">Try now!</button></a>
+      </div>
+    </div>
+    
+    <Modal Prompt Ends-->
+    <header class="header">
+      <div id="header_content">
+      <a href="#" class="logo">Parks Planner</a>
+      <nav class="navbar">
+        <a href="#">Planner</a>
+        <a href="#">About</a>
+      </nav>
+      </div>
+  </header>
+
+  <div id="container">
+  <main>
+
+    <section class="homepage">
+      <div class="homepage-text">
+        <h2>Plan Your Adventures</h2>
+        <p class="homepage-subtext">We create personalized National Parks plans for you!</p>
+        <p class="homepage-subtext-line-2">Your Adventure awaits</p>
+        <button id="try-now" class="try-now" data-bs-toggle="modal" data-bs-target="#register">Try Now</button>
+      </div>
+    </section>
+      
+    <section id="nextTripContainer">
+      <div id="search_form">
+      <h3>PLAN YOUR NEXT TRIP!</h3>
+      <p>Which state are you exploring?</p>
+      <input type="" id="userState">
+        <br>
+      <label for="lengthHike">Do you like short hikes or long hikes?</label>
+        <br>
+      <select name="shortLong" id="hikeLength">
+        <option value="short">Short Hikes</option>
+        <option value="long">Long Hikes</option>
+        <option value="either">Both</option>
+      </select>
+      <p>What activities are you interested in?</p>
+      <input type="" id="userActivities">
+        <br>
+      <label for="legthHike">Do you prefer cold weather or warm weather?</label>
+        <br>
+      <select name="coldWarm" id="preferredTemp">
+        <option value="cold">Cold Weather</option>
+        <option value="warm">Warm Weather</option>
+        <option value="either">Both</option>
+      </select>
+
+      <button class="search_button">Search</button>
+
+      </div>
+
+    </section>
+
+
+    <section>
+
+    </section>
+ 
+    <section class="lastpage">
+      <h4>Some Trails We Think You'd Like:</h4>
+      <div class="trail-recommendations">
+      <ul>
+        <a href=""><li class = lastUl id="trail_a">Trail A:</li></a>
+        <textarea class="trail_description"></textarea><br>
+        <a href=""><li class = lastUl id="trail_a">Trail B:</li></a>
+        <textarea class="trail_description"></textarea> <br>
+        <a href=""><li class = lastUl id="trail_a">Trail C:</li></a>
+        <textarea class="trail_description"></textarea>
+        </a>
+      </ul>
+    </div>
+    </section>
+  </main>
+
+
+  <!--Footer Begins-->
+  <footer id="footerContainer">
+    <h5 id="footerHeader">Parks Planner</h5>
+    <div id="footerImg">
+      <img href="#" src="./assets/images/facebook_icon_logo.png">
+      <img href="#" src="./assets/images/gmail_icon_logo.png">
+      <img href="#" src="./assets/images/instagram_icon_logo.png">
+      <img href="#" src="./assets/images/linkedIn_icon_logo.png">
+    </div>
+  </footer>
+      
+  </div>
+  
+
+    
+  <!--jQuery Library CDN-->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="./assets/js/planner.js"></script>
+
+  
+    
+</body>
+
+</html>
