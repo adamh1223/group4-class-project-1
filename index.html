@@ -355,7 +355,7 @@
                           <span aria-hidden="true">&times;</span>
                         </button>
                       </div>
-                      <div class="modal-body">
+                      <div class="modal-body" id="modal-body">
                         ${modalContent}
                       </div>
                       <div class="modal-footer">
@@ -366,11 +366,20 @@
                 </div>
               `;
 
+              // Remove any existing modal
+              $('#trailModal').remove();
+
               // Append the modal to the body
               document.body.insertAdjacentHTML('beforeend', modal);
 
               // Show the modal
               $('#trailModal').modal('show');
+
+              // Clear modal content on close
+              $('#trailModal').on('hidden.bs.modal', function (e) {
+                $('#modal-body').empty();
+              });
+
             } else {
               // No trails found
               alert('No hiking trails found nearby.');
