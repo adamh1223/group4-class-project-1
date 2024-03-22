@@ -17,39 +17,40 @@
 
 
   <!-- The Modal -->
-<div class="authentication modal fade" id="register" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="Sign Up">Authentication</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <div class=" d-flex flex-column">
-          <p class="fs-6 mb-2 fw-bold">First Name:</p>
-          <input class="first_name w-50 s-6 mb-3 city_input" type="text" />
+  <div class="authentication modal fade" id="register" tabindex="-1" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="Sign Up">Authentication</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class=" d-flex flex-column">
-          <p class="fs-6 mb-2 fw-bold">Last Name:</p>
-          <input class="last_name w-50 s-6 mb-3 city_input" type="text" />
+        <div class="modal-body">
+          <div class=" d-flex flex-column">
+            <p class="fs-6 mb-2 fw-bold">First Name:</p>
+            <input class="first_name w-50 s-6 mb-3 city_input" type="text" />
+          </div>
+          <div class=" d-flex flex-column">
+            <p class="fs-6 mb-2 fw-bold">Last Name:</p>
+            <input class="last_name w-50 s-6 mb-3 city_input" type="text" />
+          </div>
+          <div class=" d-flex flex-column">
+            <p class="fs-6 mb-2 fw-bold">User Name:</p>
+            <input class="user w-50 s-6 mb-3 city_input" type="text" />
+          </div>
+          <div class=" d-flex flex-column">
+            <p class="fs-6 mb-2 fw-bold">Password:</p>
+            <input class="password w-50 s-6 mb-3 city_input" type="password" />
+          </div>
         </div>
-        <div class=" d-flex flex-column">
-        <p class="fs-6 mb-2 fw-bold">User Name:</p>
-        <input class="user w-50 s-6 mb-3 city_input" type="text" />
-      </div>
-      <div class=" d-flex flex-column">
-        <p class="fs-6 mb-2 fw-bold">Password:</p>
-        <input class="password w-50 s-6 mb-3 city_input" type="password" />
-      </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary new_user" data-bs-dismiss="modal">Save changes</button>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary new_user" data-bs-dismiss="modal">Save changes</button>
+        </div>
       </div>
     </div>
   </div>
-</div>
-<!--Header Begins>
+  <!--Header Begins>
     
 
     
@@ -63,12 +64,12 @@
     </div>
     
     <Modal Prompt Ends-->
-    <header class="header">
-      <div id="header_content">
+  <header class="header">
+    <div id="header_content">
       <a href="#" class="logo">Parks Planner</a>
       <nav class="navbar">
         <a href="./login.html">Login</a>
-        <a href="#">About</a>
+        <a href="#">APItest2</a>
       </nav>
     </div>
   </header>
@@ -76,26 +77,26 @@
   <div id="container">
     <main>
 
-    <section class="homepage">
-      <div class="homepage-text">
-        <h2>Plan Your Adventures</h2>
-        <p class="homepage-subtext">We create personalized National Parks plans for you!</p>
-        <p class="homepage-subtext-line-2">Your Adventure awaits</p>
-        <button id="try-now" class="try-now" data-bs-toggle="modal" data-bs-target="#register">Try Now</button>
-      </div>
-    </section>
-      
-    <section id="nextTripContainer">
-      <div id="text">
+      <section class="homepage">
+        <div class="homepage-text">
+          <h2>Plan Your Adventures</h2>
+          <p class="homepage-subtext">We create personalized National Parks plans for you!</p>
+          <p class="homepage-subtext-line-2">Your Adventure awaits</p>
+          <button id="try-now" class="try-now" data-bs-toggle="modal" data-bs-target="#register">Try Now</button>
+        </div>
+      </section>
+
+      <section id="nextTripContainer">
+        <div id="text">
           <h3>PLAN YOUR NEXT TRIP!</h3>
-      </div>
+        </div>
         <div id="Question">
-          <p >Which state are you exploring?</p>
+          <p>Which state are you exploring?</p>
           <input type="" id="userState" class="box">
         </div>
-          <br>
+        <br>
         <div id="Question">
-          <label for="lengthHike" >Do you like short hikes or long hikes?</label>
+          <label for="lengthHike">Do you like short hikes or long hikes?</label>
           <br>
           <select name="shortLong" id="hikeLength" class="box">
             <option value="short">Short Hikes</option>
@@ -103,12 +104,12 @@
             <option value="either">Both</option>
           </select>
         </div>
-          <br>
+        <br>
         <div id="Question">
           <p>What activities are you interested in?</p>
           <input type="" id="userActivities" class="box">
         </div>
-          <br>
+        <br>
         <div id="Question">
           <label for="legthHike">Do you prefer cold weather or warm weather?</label>
           <br>
@@ -120,9 +121,9 @@
           <br>
         </div>
 
-          <button class="search_button" >Search</button>
+        <button class="search_button">Search</button>
 
-        
+
 
       </section>
 
@@ -155,10 +156,10 @@
 
 
     <!--Footer Begins-->
-    
+
     <footer>
-    <div id="footerContainer">
-    <img src="./assets/images/park_planner_logo.png" class="parkPlannerLogo" alt="parkPlannerLogo">
+      <div id="footerContainer">
+        <img src="./assets/images/park_planner_logo.png" class="parkPlannerLogo" alt="parkPlannerLogo">
         <div class="contact">Contact Us</div>
         <div id="footerImg">
           <img href="#" src="./assets/images/facebook_icon_logo.png">
@@ -176,12 +177,12 @@
 
   <!--jQuery Library CDN-->
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-  
+
   <script src="./assets/js/planner.js"></script>
   <script src="./assets/js/main.js"></script>
 
-  
-    
+
+
 </body>
 
 </html>
