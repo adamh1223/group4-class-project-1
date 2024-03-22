@@ -5,121 +5,30 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NPS State Parks Search</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 20px;
-    }
-
-    #search-container {
-      max-width: 400px;
-      margin: 0 auto;
-    }
-
-    #park-list {
-      list-style-type: none;
-      padding: 0;
-    }
-
-    #park-list li {
-      margin-bottom: 20px;
-      border-bottom: 1px solid #ccc;
-      padding-bottom: 20px;
-    }
-
-    .trail-button {
-      display: block;
-      margin-top: 10px;
-      padding: 5px 10px;
-      background-color: #007bff;
-      color: #fff;
-      border: none;
-      cursor: pointer;
-      text-decoration: none;
-    }
-
-    .trail-button:hover {
-      background-color: #0056b3;
-    }
-
-    .trail-info {
-      margin-top: 10px;
-      white-space: pre-wrap;
-    }
-
-    /* The Modal (background) */
-    .modal {
-      display: none;
-      /* Hidden by default */
-      position: fixed;
-      /* Stay in place */
-      z-index: 1;
-      /* Sit on top */
-      left: 0;
-      top: 0;
-      width: 100%;
-      /* Full width */
-      height: 100%;
-      /* Full height */
-      overflow: auto;
-      /* Enable scroll if needed */
-      background-color: rgb(0, 0, 0);
-      /* Fallback color */
-      background-color: rgba(0, 0, 0, 0.4);
-      /* Black w/ opacity */
-      padding-top: 60px;
-    }
-
-    /* Modal Content/Box */
-    .modal-content {
-      background-color: #fefefe;
-      margin: 5% auto;
-      /* 5% from the top and centered */
-      padding: 20px;
-      border: 1px solid #888;
-      width: 80%;
-      /* Could be more or less, depending on screen size */
-    }
-
-    /* The Close Button */
-    .close {
-      color: #aaa;
-      float: right;
-      font-size: 28px;
-      font-weight: bold;
-    }
-
-    .close:hover,
-    .close:focus {
-      color: black;
-      text-decoration: none;
-      cursor: pointer;
-    }
-  </style>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 
 <body>
-  <h1>NPS State Parks Search</h1>
-  <div id="search-container">
-    <label for="state-input">Select State Code:</label>
-    <select id="state-input">
-      <option value="">Select a state code</option>
-    </select>
-    <button onclick="searchParks()">Search</button>
-  </div>
-  <div id="park-info">
-    <h2>State Parks in the Selected State</h2>
-    <ul id="park-list"></ul>
+  <div class="container">
+    <h1 class="mt-4 mb-4"> State Parks Hike Search</h1>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="form-group">
+          <label for="state-input">Select State Code:</label>
+          <select id="state-input" class="form-control">
+            <option value="">Select a state code</option>
+          </select>
+        </div>
+        <button onclick="searchParks()" class="btn btn-primary">Search</button>
+      </div>
+    </div>
+    <div id="park-list" class="mt-4"></div>
   </div>
 
-  <!-- The Modal -->
-  <div id="myModal" class="modal">
-    <!-- Modal content -->
-    <div class="modal-content">
-      <span class="close">&times;</span>
-      <div id="modal-content"></div>
-    </div>
-  </div>
+  <!-- Bootstrap JS and jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
   <script>
     const apiKey = 'UeGIVNK3jgylK7Eyl4UiLatvibYiM5dwuUAoyp8u';
@@ -160,25 +69,25 @@
       parkList.innerHTML = '';
 
       if (!data || data.data.length === 0) {
-        parkList.innerHTML = '<li>No state parks found in the selected state.</li>';
+        parkList.innerHTML =
+          '<div class="alert alert-danger" role="alert">No state parks found in the selected state.</div>';
       } else {
         data.data.forEach(park => {
-          const listItem = document.createElement('li');
+          const listItem = document.createElement('div');
+          listItem.classList.add('card', 'mt-3');
           listItem.innerHTML = `
-            <strong><a href="${park.url}" target="_blank">${park.fullName}</a></strong><br>
-            ${park.description}
-            <button class="trail-button" onclick="openModal('${park.latitude}', '${park.longitude}')">Find Trails Nearby</button>
+            <div class="card-body">
+              <h5 class="card-title"><a href="${park.url}" target="_blank">${park.fullName}</a></h5>
+              <p class="card-text">${park.description}</p>
+              <button class="btn btn-primary" onclick="findTrails('${park.latitude}', '${park.longitude}', '${park.fullName}')">Find Trails Nearby</button>
+            </div>
           `;
           parkList.appendChild(listItem);
         });
       }
     }
 
-    async function openModal(latitude, longitude) {
-      const modal = document.getElementById("myModal");
-      const modalContent = document.getElementById("modal-content");
-      modal.style.display = "block";
-
+    async function findTrails(latitude, longitude, parkName) {
       const apiUrl =
         `https://trailapi-trailapi.p.rapidapi.com/activity/?lat=${latitude}&lon=${longitude}&radius=25&q-activities_activity_type_name_eq=hiking`;
       const options = {
@@ -192,57 +101,57 @@
       try {
         const response = await fetch(apiUrl, options);
         const result = await response.json();
-        if (Object.keys(result).length > 0) {
-          modalContent.innerHTML = '';
+
+        if (result && Object.keys(result).length > 0) {
           const trails = Object.values(result);
-          trails.forEach(trail => {
-            const trailData = {
-              name: trail.name,
-              city: trail.city,
-              state: trail.state,
-              country: trail.country,
-              description: trail.description,
-              directions: trail.directions,
-              lat: trail.lat,
-              lon: trail.lon
-            };
-            const trailElement = document.createElement('div');
-            trailElement.innerHTML = `
-              <strong>Name:</strong> ${trailData.name}<br>
-              <strong>City:</strong> ${trailData.city}<br>
-              <strong>State:</strong> ${trailData.state}<br>
-              <strong>Country:</strong> ${trailData.country}<br>
-              <strong>Description:</strong> ${trailData.description}<br>
-              <strong>Directions:</strong> ${trailData.directions}<br>
-              <strong>Latitude:</strong> ${trailData.lat}<br>
-              <strong>Longitude:</strong> ${trailData.lon}<br>
+          const modalContent = trails.map(trail => {
+            return `
+              <strong>Name:</strong> ${trail.name}<br>
+              <strong>City:</strong> ${trail.city}<br>
+              <strong>State:</strong> ${trail.state}<br>
+              <strong>Country:</strong> ${trail.country}<br>
+              <strong>Description:</strong> ${trail.description}<br>
+              <strong>Directions:</strong> ${trail.directions}<br>
+              <strong> Latitute:</strong> ${trail.lat}<br>
+              <strong>Longitude:</strong> ${trail.lon}<br>
               <hr>
             `;
-            modalContent.appendChild(trailElement);
-          });
+          }).join('');
+
+          // Create a Bootstrap modal
+          const modal = `
+            <div class="modal fade" id="trailModal" tabindex="-1" role="dialog" aria-labelledby="trailModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="trailModalLabel">${parkName} Trails</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    ${modalContent}
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          `;
+
+          // Append the modal to the body
+          document.body.insertAdjacentHTML('beforeend', modal);
+
+          // Show the modal
+          $('#trailModal').modal('show');
         } else {
-          modalContent.textContent = 'No hiking trails found nearby.';
+          // No trails found
+          alert('No hiking trails found nearby.');
         }
       } catch (error) {
         console.error(error);
         alert('There was a problem fetching hiking trails. Please try again later.');
-      }
-    }
-
-    // Get the <span> element that closes the modal
-    const span = document.getElementsByClassName("close")[0];
-
-    // When the user clicks on <span> (x), close the modal
-    span.onclick = function () {
-      const modal = document.getElementById("myModal");
-      modal.style.display = "none";
-    }
-
-    // When the user clicks anywhere outside of the modal, close it
-    window.onclick = function (event) {
-      const modal = document.getElementById("myModal");
-      if (event.target == modal) {
-        modal.style.display = "none";
       }
     }
   </script>
