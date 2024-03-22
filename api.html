@@ -72,19 +72,34 @@
         parkList.innerHTML =
           '<div class="alert alert-danger" role="alert">No state parks found in the selected state.</div>';
       } else {
+        const storedVisitedParks = JSON.parse(localStorage.getItem('visitedParks')) || {};
         data.data.forEach(park => {
+          const visited = storedVisitedParks[park.fullName] || false;
           const listItem = document.createElement('div');
           listItem.classList.add('card', 'mt-3');
           listItem.innerHTML = `
             <div class="card-body">
               <h5 class="card-title"><a href="${park.url}" target="_blank">${park.fullName}</a></h5>
               <p class="card-text">${park.description}</p>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="${park.fullName}" ${visited ? 'checked' : ''} onchange="toggleVisited(this)">
+                <label class="form-check-label" for="${park.fullName}">
+                  Visited
+                </label>
+              </div>
               <button class="btn btn-primary" onclick="findTrails('${park.latitude}', '${park.longitude}', '${park.fullName}')">Find Trails Nearby</button>
             </div>
           `;
           parkList.appendChild(listItem);
         });
       }
+    }
+
+    async function toggleVisited(checkbox) {
+      const parkName = checkbox.id;
+      const storedVisitedParks = JSON.parse(localStorage.getItem('visitedParks')) || {};
+      storedVisitedParks[parkName] = checkbox.checked;
+      localStorage.setItem('visitedParks', JSON.stringify(storedVisitedParks));
     }
 
     async function findTrails(latitude, longitude, parkName) {
