@@ -122,63 +122,10 @@
           <br>
         </div>
 
-
-        <button class="search_button">Search</button>
-        <!--richard addition-->
-        <div class="state_selector d-flex flex-row mt-5 text-center">
-          <section class="me-5  option_box">
-            <label class="text-center fw-bold ms-3" for="state_list">Please select a state:</label>
-            <select id="states" name="state_list">
-
-            </select>
-          </section>
-          <section class="btn_container">
-            <button id="btn_search" class="btn btn-primary btn-sm">Search</button>
-          </section>
-        </div>
-
-        <div class="park_container   w-100">
-          <div class="park_names">
-            <h2>Search Results</h2>
-            <div class="d-flex flex-row justify-content-between flex-wrap park_item   ms-3"></div>
-
-
-          </div>
-        </div>
-
+        
   </div>
-  <!--Begin Login Dialog-->
-  <div class="authentication modal" id="login" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="login_title">Login</h1>
+  
 
-        </div>
-        <div class="modal-body">
-          <div class=" d-flex flex-column">
-            <p class="fs-6 mb-2 fw-bold">User Name:</p>
-            <input class="user w-50 s-6 mb-3 city_input" type="text" />
-          </div>
-          <div class=" d-flex flex-column">
-            <p class="fs-6 mb-2 fw-bold">Password:</p>
-            <input class="password w-50 s-6 mb-3 city_input" type="password" />
-          </div>
-        </div>
-        <div class="modal-footer">
-
-          <button type="button" class="btn btn-primary btn_login">Login</button>
-        </div>
-      </div>
-    </div>
-
-
-    </section>
-
-
-    <section>
-
-    </section>
 
     <section class="lastpage">
       <h4>Some Trails We Think You'd Like:</h4>
@@ -206,6 +153,26 @@
 
 
     <!--Footer Begins-->
+    <div class="state_selector bg-light d-flex flex-row mt-5 text-center">
+      <section class="me-5  option_box">
+          <label class="text-center fw-bold ms-3"  for="state_list" >Please select a state:</label>
+          <select id="states" name="state_list">
+              
+          </select>
+      </section>
+      <section class="btn_container">
+          <button id="btn_search" class="btn btn-primary btn-sm">Search</button>
+      </section>
+  </div>
+
+  <div class="park_container   w-100">
+      <div class="park_names">
+          <h2>Search Results</h2>
+          <div class="d-flex flex-row justify-content-between flex-wrap park_item   ms-3"></div>
+              
+              
+      </div>
+  </div>
 
     <footer>
       <div id="footerContainer">
@@ -222,6 +189,10 @@
 
 
   </div>
+
+  
+
+  </section>
 
 
   <!-- Davids api Test code  -->
@@ -401,7 +372,10 @@
 
   <script src="./assets/js/planner.js"></script>
   <script src="./assets/js/main.js"></script>
-  <script src="./assets/js/login.js"></script>
+  <script src="./assets/api_scripts/trails.js"></script>
+
+  <!--script src="./assets/js/login.js"></script-->
+  
 
 
 
