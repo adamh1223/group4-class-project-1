@@ -48,7 +48,7 @@
     async function searchParks() {
       const stateCode = document.getElementById('state-input').value.trim().toUpperCase();
       if (stateCode === '') {
-        alert('Please select a state code.');
+        showErrorModal('Please select a state code.');
         return;
       }
 
@@ -60,7 +60,7 @@
         displayParks(data);
       } catch (error) {
         console.error('There was a problem with the fetch operation:', error);
-        alert('There was a problem fetching data. Please try again later.');
+        showErrorModal('There was a problem fetching data. Please try again later.');
       }
     }
 
@@ -129,7 +129,7 @@
                       <span aria-hidden="true">&times;</span>
                     </button>
                   </div>
-                  <div class="modal-body">
+                  <div class="modal-body" id="modal-body">
                     ${modalContent}
                   </div>
                   <div class="modal-footer">
@@ -140,19 +140,60 @@
             </div>
           `;
 
+          // Remove any existing modal
+          $('#trailModal').remove();
+
           // Append the modal to the body
           document.body.insertAdjacentHTML('beforeend', modal);
 
           // Show the modal
           $('#trailModal').modal('show');
+
+          // Clear modal content on close
+          $('#trailModal').on('hidden.bs.modal', function (e) {
+            $('#modal-body').empty();
+          });
+
         } else {
           // No trails found
-          alert('No hiking trails found nearby.');
+          showErrorModal('No hiking trails found nearby.');
         }
       } catch (error) {
         console.error(error);
-        alert('There was a problem fetching hiking trails. Please try again later.');
+        showErrorModal('There was a problem fetching hiking trails. Please try again later.');
       }
+    }
+
+    function showErrorModal(errorMessage) {
+      const modal = `
+        <div class="modal fade" id="errorModal" tabindex="-1" role="dialog" aria-labelledby="errorModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="errorModalLabel">Error</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                ${errorMessage}
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+
+      // Remove any existing error modal
+      $('#errorModal').remove();
+
+      // Append the error modal to the body
+      document.body.insertAdjacentHTML('beforeend', modal);
+
+      // Show the error modal
+      $('#errorModal').modal('show');
     }
   </script>
 </body>
