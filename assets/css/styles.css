@@ -65,20 +65,13 @@ a {
   }
 }
 
-.second {
-  background-image: url();
-  position: relative;
-  color: white;
-  height: 500px;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
 /* this is for the footer */
 #footerContainer {
   background-color: #9de3fa;
   color: rgb(0, 0, 0);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
 }
 
 footer h5 {
@@ -106,6 +99,10 @@ footer img:hover {
 
 #footerImg {
   text-align: center;
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 2;
 }
 * {
   margin: 0;
@@ -158,6 +155,22 @@ footer img:hover {
   width: 100%;
 }
 
+@media (min-width: 1275px) {
+  .logo {
+    color: black;
+  }
+}
+@media (max-width: 645px) {
+  #header_content {
+    flex-direction: column;
+    padding: 40px 20px;
+  }
+
+  .navbar a {
+    margin: 10px;
+  }
+}
+
 /* End of Header */
 
 .try-now {
@@ -201,8 +214,7 @@ h4 {
   position: relative;
   color: white;
   background-image: url("https://www.yosemite.com/wp-content/uploads/2023/04/yosemite-valley-view-sunrise-istock-545090448-scaled.webp"); /* The image used */
-
-  height: 500px;
+  height: 800px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -262,8 +274,6 @@ h4 {
   position: relative;
   color: white;
   background-image: url("https://www.yosemite.com/wp-content/uploads/2023/04/yosemite-valley-view-sunrise-istock-545090448-scaled.webp"); /* The image used */
-
-  height: 500px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -286,31 +296,68 @@ h4 {
 }
 
 /* css for the section plan your next trip */
-<<<<<<< HEAD
 #nextTripContainer {
-  background-image: url("https://t3.gstatic.com/licensed-image?q=tbn:ANd9GcTEQIHOSpnI3yyY1tNWHIoGBlQizTtlrmxgFJvJkvO07wtgA2lRytPyx3D2Dc0fXoMq");
-}
-=======
-#nextTripContainer{
   background-image: url("https://wallup.net/wp-content/uploads/2019/09/763385-kananaskis-lakes-canada-lake-mountains-trees-landscape-panorama-1.jpg");
   width: 100%;
   height: 100vh;
-
 }
-h3{
-  font-size: 30px;
-  color:white;
+h3 {
+  padding: 40px 0 0 0;
+  color: rgb(255, 255, 255);
+  font-size: 50px;
   text-align: center;
-  padding-bottom: 30px;
 }
-#text{
-  font-size: 20px;
+#text {
   margin: 10px;
-  padding:30px;
-  color:white;
+  padding: 30px;
+  color: white;
   line-height: 50px;
 }
-#Question{
-  line-height: 20px;
+#Question {
+  line-height: 60px;
+  padding-top: 0;
+  font-size: 30px;
+  padding-left: 70px;
 }
->>>>>>> 4a5a1cdc5d0d523bd53d33be9ec6ac4c332b0e08
+.box {
+  border-style: hidden;
+  border-radius: 10px;
+  font-size: 30px;
+  width: 40%;
+}
+
+/* another css for the footer */
+.parkPlannerLogo {
+  height: 200px;
+  width: 400px;
+  margin-left: 30px;
+  align-items: center;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+.contact {
+  font-size: 20px;
+  text-align: center;
+  margin-top: 30px;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+.search_button {
+  font-size: 30px;
+  margin: 50px auto;
+  display: flex;
+  cursor: pointer;
+  border-radius: 20px;
+  width: 150px;
+  padding: 5px;
+  justify-content: center;
+  border-style: hidden;
+}
+.search_button:hover {
+  background-color: var(--bronzeRGBTransparent);
+  color: white;
+}
