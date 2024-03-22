@@ -202,7 +202,7 @@ a {
 
 .homepage-text {
   display: grid !important;
-  padding-top: 500px !important;
+  padding-top: 400px !important;
   width: fit-content !important;
   font-size: 50px !important;
   text-align: center !important;
@@ -327,9 +327,10 @@ h3 {
 
 /* Footer */
 #footerContainer {
-  background-color: #9de3fa;
+  background-color: #c8a47ece;
   color: rgb(0, 0, 0);
-  display: grid;
+  display: flex;
+  justify-content: center;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr;
 }
@@ -346,10 +347,18 @@ footer h5::before {
   content: "\00A9";
 }
 
+footer a {
+  text-decoration: none;
+  color: white;
+}
+
+.parkPlannerLogo {
+margin-right: auto;
+}
+
 footer img {
-  height: 30px;
-  width: 30px;
-  align-items: center;
+  height: 40px;
+  width: 40px;
   padding: 10px;
 }
 
@@ -357,10 +366,14 @@ footer img:hover {
   cursor: pointer;
 }
 
-#footerImg {
+.contact {
+  padding: 8px 5px 0px 0px;
+}
+
+/* #footerImg {
   text-align: center;
   grid-column-start: 3;
   grid-column-end: 4;
   grid-row-start: 1;
   grid-row-end: 2;
-}
+} */
