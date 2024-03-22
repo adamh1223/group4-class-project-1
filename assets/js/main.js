@@ -1,4 +1,4 @@
-//Modal Script Begins
+//Welcome Modal Script Begins
 var modal = document.getElementById("modal_body");
 var mainContent = document.getElementById("container");
 var headerContent = document.getElementById("header_content");
@@ -17,7 +17,7 @@ modalButton.onclick = function closeModal() {
     mainContent.style.filter = "blur(0px)";
     headerContent.style.filter = "blur(0px)";
 };
-//Modal Script Ends
+//Welcome Modal Script Ends
 
 
 /*Call to jQuery to ensure that code isn't run until the browser has finished 
