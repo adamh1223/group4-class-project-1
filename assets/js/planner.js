@@ -6,7 +6,15 @@ function userInfo() {
   var password = $(".password").val();
   $(".user").val("");
   $(".password").val("");
-  newUser = [{ user: user, password: password }];
+  newUser = [
+    {
+      firstName: firstName,
+      lastName: lastName,
+      user: user,
+      password: password,
+    },
+  ];
+
   console.log(newUser);
   login.push(newUser);
 
