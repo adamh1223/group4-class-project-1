@@ -67,9 +67,9 @@ async function displayParks(data) {
       listItem.classList.add('card', 'mt-3');
       listItem.innerHTML = `
         <div class="card-body">
-          <h5 class="card-title"><a href="${park.url}" target="_blank">${park.fullName}</a></h5>
+          <h5 class="card-title"><a href="${park.url}" target="_blank" class="text-info">${park.fullName}</a></h5>
           <p class="card-text">${park.description}</p>
-          <button class="btn btn-primary" onclick="findTrails('${park.latitude}', '${park.longitude}', '${park.fullName}')">Find Trails Nearby</button>
+          <button class="btn btn-secondary" onclick="findTrails('${park.latitude}', '${park.longitude}', '${park.fullName}')">Find Trails Nearby</button>
         </div>
       `;
       parkList.appendChild(listItem);
@@ -144,29 +144,3 @@ async function findTrails(latitude, longitude, parkName) {
     alert('There was a problem fetching hiking trails. Please try again later.');
   }
 };
-
-
-/*Call to jQuery to ensure that code isn't run until the browser has finished 
-rendering all the elements in the html*/
-$(document).ready(function () {
-
-
-//Local Storage Script Begins
-
-/*Function to store trail data to local storage and presist data to the page 
-when user clicks the "Search" button*/
-$(".search_button").on("click", function() {
-    var trailInfo = $(this).siblings(".trail_description").val();
-    var trail = $(this).parent().attr("id");
-
-    //Save trail info retrieved by API and corresponding trail ID to local storage
-    localStorage.setItem(trail, trailInfo);
-})
-
-  /*Get any user input that was saved in localStorage and set the 
-  values of the corresponding textarea elements*/
-  $("#trail_a .trail_description").val(localStorage.getItem("trail_a"));
-  $("#trail_b .trail_description").val(localStorage.getItem("trail_b"));
-  $("#trail_c .trail_description").val(localStorage.getItem("trail_c"));
-});
-//Local Storage Script Ends
