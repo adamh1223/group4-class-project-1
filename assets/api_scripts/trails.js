@@ -114,6 +114,7 @@ function parkDetail(event) {
   var description = parkItem.description;
   $(".park_details").children().remove();
 
+  //adding comment to send my changes to GIT
   var content = `
   <p class="details_content flex-wrap text-wrap  border border-1 p-1 bg-dark text-light">
     <b>Full Name:</b> ${fullName}<br/>
