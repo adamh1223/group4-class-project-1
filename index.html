@@ -152,7 +152,7 @@
     </main>
 
 
-    <!--Footer Begins-->
+    
     <div class="state_selector bg-light d-flex flex-row mt-5 text-center">
       <section class="me-5  option_box">
           <label class="text-center fw-bold ms-3"  for="state_list" >Please select a state:</label>
@@ -174,6 +174,7 @@
       </div>
   </div>
 
+  <!--Footer Begins-->
     <footer>
       <div id="footerContainer">
         <img src="./assets/images/park_planner_logo.png" class="parkPlannerLogo" alt="parkPlannerLogo">
@@ -189,11 +190,6 @@
 
 
   </div>
-
-  
-
-  </section>
-
 
   <!-- Davids api Test code  -->
   <section>
@@ -329,7 +325,7 @@
                           <span aria-hidden="true">&times;</span>
                         </button>
                       </div>
-                      <div class="modal-body" id="modal-body">
+                      <div class="modal-body">
                         ${modalContent}
                       </div>
                       <div class="modal-footer">
@@ -340,20 +336,11 @@
                 </div>
               `;
 
-              // Remove any existing modal
-              $('#trailModal').remove();
-
               // Append the modal to the body
               document.body.insertAdjacentHTML('beforeend', modal);
 
               // Show the modal
               $('#trailModal').modal('show');
-
-              // Clear modal content on close
-              $('#trailModal').on('hidden.bs.modal', function (e) {
-                $('#modal-body').empty();
-              });
-
             } else {
               // No trails found
               alert('No hiking trails found nearby.');
