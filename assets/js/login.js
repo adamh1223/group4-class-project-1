@@ -13,7 +13,7 @@ function parkDetail() {
   alert("here");
 }
 function processParks(parksResult) {
-  $("ul").remove();
+  $(".park_item").remove();
   var parkList = $(".park_item"); //.find("li").text();
 
   for (var i = 0; i < parksResult.length; i++) {
@@ -21,7 +21,7 @@ function processParks(parksResult) {
     console.log(parksResult[i].designation);
     parkCode = parksResult[i].parkCode;
     parkList.append(
-      "<div class='w-25 mb-2 d-flex flex-row border border-1 p-2 justify-content-between' id=" +
+      "<div class='w-25 mb-2 d-flex flex-column border border-1 p-2 justify-content-between' id=" +
         parkCode +
         "'><p>" +
         fullName +
