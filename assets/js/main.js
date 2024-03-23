@@ -286,13 +286,12 @@ async function findTrails(latitude, longitude, parkName) {
       const trails = Object.values(result);
       const modalContent = trails.map(trail => {
         return `
-        <div>
+        <div class="p-2">
           <p><strong>Name:</strong> ${trail.name}</p>
           <p><strong>City:</strong> ${trail.city}</p>
           <p><strong>State:</strong> ${trail.state}</p>
           <p><strong>Country:</strong> ${trail.country}</p>
           <p><strong>Description:</strong> ${trail.description}</p>
-          <p><strong>Directions:</strong> ${trail.directions}</p>
           <p><strong> Latitute:</strong> ${trail.lat}</p>
           <p><strong>Longitude:</strong> ${trail.lon}</p>
         </div>
@@ -306,8 +305,8 @@ async function findTrails(latitude, longitude, parkName) {
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="trailModalLabel">${parkName} Trails</h5>
-                <button type="button" class="close btn btn-secondary " data-dismiss="modal" aria-label="Close">
+                <h5 class="modal-title m-2" id="trailModalLabel">${parkName} Trails</h5>
+                <button type="button" class="close btn btn-secondary m-2 position-absolute top-0 end-0" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
