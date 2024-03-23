@@ -17,7 +17,7 @@
 
 
 
-<p align="center"><img src="" alt=""></p>
+<p align="center"><img src="./assets/images/national_park_trail_finder.gif" alt=""></p>
 
 
 ## Requirements
