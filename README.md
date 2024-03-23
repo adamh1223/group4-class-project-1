@@ -11,11 +11,18 @@
 * [License](#license)
 
 ## Description
+The National Parks Trail Finder is a server-side API driven web app to provide users with a list of national parks of a selected state and trails in the the selected area.
 
+Utilization of local storage allows users to create a personal account and track which parks they have visited.
+
+Future development of this app would include expansion of the personal account, allowing a user to store information on parks they would like to visit and plan an itinerary for that park.
 
 ## Usage
+Upon opening the [National Park Trail Finder](), the user is presented with an introduction to the page. Clicking the "Try Now" button in the welcome section directs the user to the search form where they may select a U.S. state. Clicking the "Search" button generates a scrollable list of national parks within the selected state, links to the official page of the respective park, and a button to view trails within that park.
 
+A user may track which parks they've visited by checking the box found within the national park's description.
 
+Personal accounts with login credentials can be created by clicking the "Login" link found at the top right of the page
 
 <p align="center"><img src="./assets/images/national_park_trail_finder.gif" alt=""></p>
 
@@ -43,7 +50,12 @@ Built with:
 * [Google Fonts](https://fonts.googleapis.com)
 
 ## Contributors
-
+* Jenina dela Cruz
+* Porsche Herskorn
+* Adam Hussain
+* David Nosach
+* Romy
+* Richard Thomas
 
 
 ## License
