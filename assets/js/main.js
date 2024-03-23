@@ -286,14 +286,16 @@ async function findTrails(latitude, longitude, parkName) {
       const trails = Object.values(result);
       const modalContent = trails.map(trail => {
         return `
-          <strong>Name:</strong> ${trail.name}<br>
-          <strong>City:</strong> ${trail.city}<br>
-          <strong>State:</strong> ${trail.state}<br>
-          <strong>Country:</strong> ${trail.country}<br>
-          <strong>Description:</strong> ${trail.description}<br>
-          <strong>Directions:</strong> ${trail.directions}<br>
-          <strong> Latitute:</strong> ${trail.lat}<br>
-          <strong>Longitude:</strong> ${trail.lon}<br>
+        <div>
+          <p><strong>Name:</strong> ${trail.name}</p>
+          <p><strong>City:</strong> ${trail.city}</p>
+          <p><strong>State:</strong> ${trail.state}</p>
+          <p><strong>Country:</strong> ${trail.country}</p>
+          <p><strong>Description:</strong> ${trail.description}</p>
+          <p><strong>Directions:</strong> ${trail.directions}</p>
+          <p><strong> Latitute:</strong> ${trail.lat}</p>
+          <p><strong>Longitude:</strong> ${trail.lon}</p>
+        </div>
           <hr>
         `;
       }).join('');
@@ -305,7 +307,7 @@ async function findTrails(latitude, longitude, parkName) {
             <div class="modal-content">
               <div class="modal-header">
                 <h5 class="modal-title" id="trailModalLabel">${parkName} Trails</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <button type="button" class="close btn btn-secondary " data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
@@ -328,6 +330,12 @@ async function findTrails(latitude, longitude, parkName) {
 
       // Show the modal
       $('#trailModal').modal('show');
+
+      function onClose(){
+        $('#trailModal').modal('hide');
+      }
+
+      $('.btn').on('click', onClose)
 
       // Clear modal content on close
       $('#trailModal').on('hidden.bs.modal', function (e) {
