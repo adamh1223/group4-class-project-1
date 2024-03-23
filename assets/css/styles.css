@@ -13,57 +13,6 @@ a {
   text-decoration: none;
 }
 
-/*Welcome Modal Style*/
-.modal_outer {
-  z-index: 1;
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-#modal_body {
-  width: 25%;
-  display: none;
-  overflow: auto;
-  background-color: #fefefea3;
-  padding: 20px;
-  border-radius: 25%;
-  align-content: center;
-  text-align: center;
-  font-size: 25px;
-}
-
-#modal_body h2 {
-  font-size: 30px;
-  margin: 5% 0% 3% 0;
-}
-
-#modal_button {
-  color: white;
-  font-size: 25px;
-  text-align: center;
-  margin: 3% 0 5% 0;
-  padding: 4px 10px 4px 10px;
-  transition: 0.3s;
-  border: none;
-  border-radius: 25px;
-  background-color: var(--bronze);
-}
-
-#modal_button:hover,
-#modal_button:focus {
-  color: black;
-  cursor: pointer;
-  animation: pulse 1s infinite;
-  transition: 0.3s;
-}
-
 /*Button Animation Effects*/
 @keyframes pulse {
   0% {
@@ -76,17 +25,6 @@ a {
     transform: scale(1);
   }
 }
-
-/* This is currently not in use
-.second {
-  background-image: url();
-  position: relative;
-  color: white;
-  height: 500px;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-} */
 
 /* Header */
 #header_content {
@@ -112,7 +50,9 @@ a {
 }
 
 .try-now:hover {
-
+  cursor: pointer;
+  animation: pulse 1s infinite;
+  transition: 0.3s;
 }
 
 .logo {
@@ -233,74 +173,6 @@ a {
   margin: 0 0 40px 0 !important;
 }
 
-/* This is not in use
-.trail-recommendations {
-  width: 100%;
-  padding: 0 0 0 25px;
-  margin-top: 50px;
-  position: relative;
-  color: white;
-  height: 500px;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-h4 {
-  padding: 40px 0 0 0;
-  width: 750px;
-  color: black;
-  font-size: 50px;
-  text-align: center;
-}
-
-.lastUl {
-  padding: 5px;
-  background-color: #c1cfea;
-  width: fit-content;
-  font-weight: 700;
-  color: black;
-  font-size: 40px;
-  list-style-type: none;
-} */
-
-/* This is not in use
-css for the section plan your next trip */
-/* #nextTripContainer {
-  background-image: url("https://t3.gstatic.com/licensed-image?q=tbn:ANd9GcTEQIHOSpnI3yyY1tNWHIoGBlQizTtlrmxgFJvJkvO07wtgA2lRytPyx3D2Dc0fXoMq");
-
-  width: 100%;
-  height: 100vh;
-}
-
-h3 {
-  padding: 40px 0 0 0;
-  color: rgb(255, 255, 255);
-  font-size: 50px;
-  text-align: center;
-}
-
-#text {
-  margin: 10px;
-  padding: 30px;
-  color: white;
-  line-height: 50px;
-}
-
-#Question {
-  line-height: 60px;
-  padding-top: 0;
-  font-size: 30px;
-  padding-left: 70px;
-}
-
-.box {
-  border-style: hidden;
-  border-radius: 10px;
-  font-size: 30px;
-  width: 40%;
-} */
-
 /* Search Container*/
 .search_container {
   margin-top: 175px;
@@ -360,11 +232,3 @@ footer img:hover {
 .contact {
   padding: 8px 5px 0px 0px;
 }
-
-/* #footerImg {
-  text-align: center;
-  grid-column-start: 3;
-  grid-column-end: 4;
-  grid-row-start: 1;
-  grid-row-end: 2;
-} */

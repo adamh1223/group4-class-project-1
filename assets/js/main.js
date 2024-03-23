@@ -1,44 +1,219 @@
-//Welcome Modal Script Begins
-// var modal = document.getElementById("modal_body");
-// var mainContent = document.getElementById("container");
-// var headerContent = document.getElementById("header_content");
-// var modalButton = document.getElementById("modal_button");
-
-//Open the modal on page load
-// window.onload = function displayModal() {
-//     modal.style.display = "block";
-//     mainContent.style.filter = "blur(4px)";
-//     headerContent.style.filter = "blur(4px)";    
-// };
-
-//Close the modal on button click
-// modalButton.onclick = function closeModal() {
-//     modal.style.display = "none";
-//     mainContent.style.filter = "blur(0px)";
-//     headerContent.style.filter = "blur(0px)";
-// };
-//Welcome Modal Script Ends
-
 //API call scripts
 const apiKey = 'UeGIVNK3jgylK7Eyl4UiLatvibYiM5dwuUAoyp8u';
-const stateCodes = ['AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'FL', 'GA', 'HI', 'ID', 'IL', 'IN', 'IA',
-  'KS',
-  'KY', 'LA', 'ME', 'MD', 'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ', 'NM', 'NY', 'NC', 'ND',
-  'OH', 'OK', 'OR', 'PA', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VT', 'VA', 'WA', 'WV', 'WI', 'WY'
+const states = [{
+    code: 'AL',
+    name: 'Alabama'
+  },
+  {
+    code: 'AK',
+    name: 'Alaska'
+  },
+  {
+    code: 'AZ',
+    name: 'Arizona'
+  },
+  {
+    code: 'AR',
+    name: 'Arkansas'
+  },
+  {
+    code: 'CA',
+    name: 'California'
+  },
+  {
+    code: 'CO',
+    name: 'Colorado'
+  },
+  {
+    code: 'CT',
+    name: 'Connecticut'
+  },
+  {
+    code: 'DE',
+    name: 'Delaware'
+  },
+  {
+    code: 'FL',
+    name: 'Florida'
+  },
+  {
+    code: 'GA',
+    name: 'Georgia'
+  },
+  {
+    code: 'HI',
+    name: 'Hawaii'
+  },
+  {
+    code: 'ID',
+    name: 'Idaho'
+  },
+  {
+    code: 'IL',
+    name: 'Illinois'
+  },
+  {
+    code: 'IN',
+    name: 'Indiana'
+  },
+  {
+    code: 'IA',
+    name: 'Iowa'
+  },
+  {
+    code: 'KS',
+    name: 'Kansas'
+  },
+  {
+    code: 'KY',
+    name: 'Kentucky'
+  },
+  {
+    code: 'LA',
+    name: 'Louisiana'
+  },
+  {
+    code: 'ME',
+    name: 'Maine'
+  },
+  {
+    code: 'MD',
+    name: 'Maryland'
+  },
+  {
+    code: 'MA',
+    name: 'Massachusetts'
+  },
+  {
+    code: 'MI',
+    name: 'Michigan'
+  },
+  {
+    code: 'MN',
+    name: 'Minnesota'
+  },
+  {
+    code: 'MS',
+    name: 'Mississippi'
+  },
+  {
+    code: 'MO',
+    name: 'Missouri'
+  },
+  {
+    code: 'MT',
+    name: 'Montana'
+  },
+  {
+    code: 'NE',
+    name: 'Nebraska'
+  },
+  {
+    code: 'NV',
+    name: 'Nevada'
+  },
+  {
+    code: 'NH',
+    name: 'New Hampshire'
+  },
+  {
+    code: 'NJ',
+    name: 'New Jersey'
+  },
+  {
+    code: 'NM',
+    name: 'New Mexico'
+  },
+  {
+    code: 'NY',
+    name: 'New York'
+  },
+  {
+    code: 'NC',
+    name: 'North Carolina'
+  },
+  {
+    code: 'ND',
+    name: 'North Dakota'
+  },
+  {
+    code: 'OH',
+    name: 'Ohio'
+  },
+  {
+    code: 'OK',
+    name: 'Oklahoma'
+  },
+  {
+    code: 'OR',
+    name: 'Oregon'
+  },
+  {
+    code: 'PA',
+    name: 'Pennsylvania'
+  },
+  {
+    code: 'RI',
+    name: 'Rhode Island'
+  },
+  {
+    code: 'SC',
+    name: 'South Carolina'
+  },
+  {
+    code: 'SD',
+    name: 'South Dakota'
+  },
+  {
+    code: 'TN',
+    name: 'Tennessee'
+  },
+  {
+    code: 'TX',
+    name: 'Texas'
+  },
+  {
+    code: 'UT',
+    name: 'Utah'
+  },
+  {
+    code: 'VT',
+    name: 'Vermont'
+  },
+  {
+    code: 'VA',
+    name: 'Virginia'
+  },
+  {
+    code: 'WA',
+    name: 'Washington'
+  },
+  {
+    code: 'WV',
+    name: 'West Virginia'
+  },
+  {
+    code: 'WI',
+    name: 'Wisconsin'
+  },
+  {
+    code: 'WY',
+    name: 'Wyoming'
+  }
 ];
 
 const stateInput = document.getElementById('state-input');
-stateCodes.forEach(code => {
+states.forEach(state => {
   const option = document.createElement('option');
-  option.value = code;
-  option.textContent = code;
+  option.value = state.code;
+  option.textContent = state.name;
   stateInput.appendChild(option);
 });
 
 async function searchParks() {
   const stateCode = document.getElementById('state-input').value.trim().toUpperCase();
   if (stateCode === '') {
-    alert('Please select a state code.');
+    showErrorModal('Please select a state.');
     return;
   }
 
@@ -50,7 +225,7 @@ async function searchParks() {
     displayParks(data);
   } catch (error) {
     console.error('There was a problem with the fetch operation:', error);
-    alert('There was a problem fetching data. Please try again later.');
+    showErrorModal('There was a problem fetching data. Please try again later.');
   }
 }
 
@@ -62,19 +237,34 @@ async function displayParks(data) {
     parkList.innerHTML =
       '<div class="alert alert-danger" role="alert">No state parks found in the selected state.</div>';
   } else {
+    const storedVisitedParks = JSON.parse(localStorage.getItem('visitedParks')) || {};
     data.data.forEach(park => {
+      const visited = storedVisitedParks[park.fullName] || false;
       const listItem = document.createElement('div');
       listItem.classList.add('card', 'mt-3');
       listItem.innerHTML = `
         <div class="card-body">
           <h5 class="card-title"><a href="${park.url}" target="_blank" class="text-info">${park.fullName}</a></h5>
           <p class="card-text">${park.description}</p>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="${park.fullName}" ${visited ? 'checked' : ''} onchange="toggleVisited(this)">
+            <label class="form-check-label" for="${park.fullName}">
+              Visited
+            </label>
+          </div>
           <button class="btn btn-secondary" onclick="findTrails('${park.latitude}', '${park.longitude}', '${park.fullName}')">Find Trails Nearby</button>
         </div>
       `;
       parkList.appendChild(listItem);
     });
   }
+}
+
+async function toggleVisited(checkbox) {
+  const parkName = checkbox.id;
+  const storedVisitedParks = JSON.parse(localStorage.getItem('visitedParks')) || {};
+  storedVisitedParks[parkName] = checkbox.checked;
+  localStorage.setItem('visitedParks', JSON.stringify(storedVisitedParks));
 }
 
 async function findTrails(latitude, longitude, parkName) {
@@ -119,7 +309,7 @@ async function findTrails(latitude, longitude, parkName) {
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
-              <div class="modal-body">
+              <div class="modal-body" id="modal-body">
                 ${modalContent}
               </div>
               <div class="modal-footer">
@@ -130,17 +320,58 @@ async function findTrails(latitude, longitude, parkName) {
         </div>
       `;
 
+      // Remove any existing modal
+      $('#trailModal').remove();
+
       // Append the modal to the body
       document.body.insertAdjacentHTML('beforeend', modal);
 
       // Show the modal
       $('#trailModal').modal('show');
+
+      // Clear modal content on close
+      $('#trailModal').on('hidden.bs.modal', function (e) {
+        $('#modal-body').empty();
+      });
+
     } else {
       // No trails found
-      alert('No hiking trails found nearby.');
+      showErrorModal('No hiking trails found nearby.');
     }
   } catch (error) {
     console.error(error);
-    alert('There was a problem fetching hiking trails. Please try again later.');
+    showErrorModal('There was a problem fetching hiking trails. Please try again later.');
   }
-};
+}
+
+function showErrorModal(errorMessage) {
+  const modal = `
+    <div class="modal fade" id="errorModal" tabindex="-1" role="dialog" aria-labelledby="errorModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="errorModalLabel">Error</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            ${errorMessage}
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+
+  // Remove any existing error modal
+  $('#errorModal').remove();
+
+  // Append the error modal to the body
+  document.body.insertAdjacentHTML('beforeend', modal);
+
+  // Show the error modal
+  $('#errorModal').modal('show');
+}
