@@ -54,7 +54,7 @@ Built with:
 * Porsche Herskorn
 * Adam Hussain
 * David Nosach
-* Romy
+* Romy Pisigan
 * Richard Thomas
 
 
