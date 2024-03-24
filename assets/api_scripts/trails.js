@@ -114,13 +114,12 @@ function parkDetail(event) {
   var description = parkItem.description;
   $(".park_details").children().remove();
 
-  //adding comment to send my changes to GIT
   var content = `
   <p class="details_content flex-wrap text-wrap  border border-1 p-1 bg-dark text-light">
     <b>Full Name:</b> ${fullName}<br/>
     <b>URL:</b> <a href=${url}>${url}</a><br/>
     <b>Designation:</b> ${designation}<br/>
-    <b>DirectionsInfo:</b> ${directions}<br/>
+    <b>Directions:</b> ${directions}<br/>
     <b>Description:</b> ${description}</b>
   </p>
   <div class="w-100 d-flex flex-row flex-wrap btn_park justify-content-end">
@@ -143,7 +142,6 @@ function processParks(parksResult) {
     parkCode = parksResult[i].parkCode;
     longitude = parksResult[i].longitude;
     latitude = parksResult[i].latitude;
-    console.log(parksResult);
     console.log("latitude " + latitude + "longitude " + longitude);
     parkList.append(
       "<div class='w-25 mb-2 d-flex flex-column border border-1 p-2 justify-content-between' id=" +
