@@ -83,7 +83,6 @@ async function getTrails() {
   try {
     const response = await fetch(requestURL, options);
     const result = await response.json();
-    console.log(result);
     trailsResult = Object.values(result);
     console.log(trailsResult);
     processTrails();
@@ -101,18 +100,41 @@ function parkDetail_display() {
   $(".btn_park").children().show();
 }
 
-function parkDetail(event) {
+function bookingPark(event) {
+  bBook = true;
+  parkCode = $(this).attr("id");
+  parkDetail();
+  bBook = false;
+}
+function parkDetail() {
   parkDetail_display();
-  var parkItem = parksResult.find(
-    (element) => element.parkCode == $(this).attr("id")
-  );
-  console.log(parkItem);
-  fullName = parkItem.fullName;
-  var stateCode = parkItem.states;
-  var url = parkItem.directionsUrl;
-  var designation = parkItem.designation;
-  var directions = parkItem.directionsInfo;
-  var description = parkItem.description;
+  var parkItem;
+  var url;
+  var designation;
+  var directions;
+  var description;
+
+  if (!bBook) {
+    parkItem = parksResult.find(
+      (element) => element.parkCode == $(this).attr("id")
+    );
+    parkCode = $(this).attr("id");
+    fullName = parkItem.fullName;
+    stateCode = parkItem.states;
+    url = parkItem.directionsUrl;
+    designation = parkItem.designation;
+    directions = parkItem.directionsInfo;
+    description = parkItem.description;
+  } else {
+    parkItem = bookingsStorage.find((element) => element.parkCode == parkCode);
+
+    fullName = parkItem.fullName;
+    stateCode = parkItem.stateCode;
+    url = parkItem.url;
+    designation = parkItem.designation;
+    directions = parkItem.directions;
+    description = parkItem.description;
+  }
   $(".park_details").children().remove();
 
   var content = `
@@ -133,6 +155,9 @@ function parkDetail(event) {
   $(".park_details").append(content);
   $(".park_details>.btn_park>.btn_home").on("click", parkDisplay);
   $(".park_details>.btn_park>.btn_book").on("click", bookings);
+
+  longitude = parkItem.longitude;
+  latitude = parkItem.latitude;
   getTrails();
 }
 function processParks(parksResult) {
@@ -144,7 +169,8 @@ function processParks(parksResult) {
     parkCode = parksResult[i].parkCode;
     longitude = parksResult[i].longitude;
     latitude = parksResult[i].latitude;
-    console.log("latitude " + latitude + "longitude " + longitude);
+    console.log(longitude + " lon " + latitude + " lat");
+
     parkList.append(
       "<div class='w-25 mb-2 d-flex flex-column border border-1 p-2 justify-content-between' id=" +
         parkCode +
@@ -168,21 +194,93 @@ function parkDisplay() {
   $(".trail_container").children().hide();
   $(".trail_details").children().hide();
   $(".btn_trail").children().hide();
+  $(".state_selector").children(".option_box").val(stateCode);
 }
+function reAddBookings() {
+  if (bookingsStorage && bookingsStorage.length > 0) {
+    iBookings = bookingsStorage.length;
+  } else {
+    iBookings++;
+  }
 
+  var bookingCount = $(".state_selector>.bookingsContainer>.btn_bookings");
+  bookingCount.text("Click to expand/collapse bookings(" + iBookings + ")");
+
+  var newItem = $(
+    ".state_selector>.bookingsContainer>#collapse_bookings>.bookings"
+  );
+  var newDiv =
+    "<div name=" +
+    stateCode +
+    " id=" +
+    parkCode +
+    " class=text-primary>" +
+    fullName +
+    "</div>";
+  newItem.append(newDiv);
+  clickItem = $(
+    ".state_selector>.bookingsContainer>#collapse_bookings>.bookings>#" +
+      parkCode
+  );
+  clickItem.on("click", bookingPark);
+}
 function bookings() {
   var result = parksResult.find((x) => x.parkCode == parkCode);
   fullName = result.fullName;
-  bookingsStorage.push(parkCode);
+  var stateCode = result.states;
+  var url = result.directionsUrl;
+  var designation = result.designation;
+  var directions = result.directionsInfo;
+  var description = result.description;
+  longitude = result.longitude;
+  latitude = result.latitude;
+
+  if (bookingsStorage && bookingsStorage.length > 0) {
+    iBookings = bookingsStorage.length + 1;
+  } else {
+    iBookings++;
+  }
+
+  var bookingCount = $(".state_selector>.bookingsContainer>.btn_bookings");
+  bookingCount.text("Click to expand/collapse bookings(" + iBookings + ")");
+  bookingsStorage.push({
+    stateCode: stateCode,
+    parkCode: parkCode,
+    fullName: fullName,
+    url: url,
+    designation: designation,
+    directions: directions,
+    description: description,
+    latitude: latitude,
+    longitude: longitude,
+  });
   console.log(bookingsStorage);
-  iBookings = bookingsStorage.length + 1;
-  localStorage.setItem("bookings", JSON.stringify(parkCode));
-  localStorage;
+
+  localStorage.setItem("bookingsStorage", JSON.stringify(bookingsStorage));
+  localStorage.setItem("parksResult", JSON.stringify(parksResult));
+
+  var newItem = $(
+    ".state_selector>.bookingsContainer>#collapse_bookings>.bookings"
+  );
+  var newDiv =
+    "<div name=" +
+    stateCode +
+    " id=" +
+    parkCode +
+    " class=text-primary>" +
+    fullName +
+    "</div>";
+  newItem.append(newDiv);
+  var clickItem = $(
+    ".state_selector>.bookingsContainer>#collapse_bookings>.bookings>#" +
+      parkCode
+  );
+  clickItem.on("click", bookingPark);
 }
 
 function parkAPI() {
   parkDisplay();
-  var stateCode = $(".state_selector")
+  stateCode = $(".state_selector")
     .children(".option_box")
     .find("#states option:selected")
     .val();
@@ -208,10 +306,35 @@ function parkAPI() {
 
 var trailName = "";
 var fullName = "";
+var parkCode = "";
+var stateCode = "";
 var iBookings = 0;
 var bookingsStorage = [];
 var parksResult = [];
 var trailsResult = [];
+var bBook = false;
+
+bookingsStorage = JSON.parse(localStorage.getItem("bookingsStorage"));
+parksResult = JSON.parse(localStorage.getItem("parksResult"));
+console.log(bookingsStorage);
+console.log(parksResult);
+
+$(document).ready(function () {
+  if (bookingsStorage && parksResult) {
+    stateCode = bookingsStorage[bookingsStorage.length - 1].stateCode;
+
+    $(".state_selector>.option_box>#states").val(stateCode);
+    parkAPI();
+    for (var i = 0; i < bookingsStorage.length; i++) {
+      parkCode = bookingsStorage[i].parkCode;
+      fullName = bookingsStorage[i].fullName;
+      stateCode = bookingsStorage[i].stateCode;
+      reAddBookings();
+    }
+  } else {
+    bookingsStorage = [];
+  }
+});
 
 var latitude;
 var longitude;

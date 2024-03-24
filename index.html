@@ -153,7 +153,7 @@
 
 
     <!--Richard's code-->
-    <div class="state_selector bg-light d-flex flex-row mt-5 text-center">
+    <div class="w-100 state_selector d-flex flex-row mt-5 text-center">
       <section class="me-5  option_box">
           <label class="text-center fw-bold ms-3"  for="state_list" >Please select a state:</label>
           <select id="states" name="state_list">
@@ -163,36 +163,50 @@
       <section class="btn_container">
           <button id="btn_search" class="btn btn-primary btn-sm">Search</button>
       </section>
-  </div>
+      <div class="bookingsContainer d-flex flex-column justify-content-end">
+        
+        <button class="btn_bookings btn text-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_bookings" aria-expanded="false" aria-controls="collapseExample">
+          Click to expand/collapse bookings(0)
+        </button>
+        
+        <div class="collapse" id="collapse_bookings">
+          <div class="bookings card card-body d-flex flex-column fs-6">
+            <p><b>Click below to view your destinations</b></p>
+          </div>
+        </div>
+      </div>
+        
+    </div>
 
-  <div class="park_container   w-100">
-      <div class="park_names ms-3">
-          <h3>National Parks</h3>
-          <div class="d-flex flex-row justify-content-evenly flex-wrap park_item   ms-3"></div>
+    <div class="park_container   w-100">
+        <div class="park_names ms-3">
+            <h3>National Parks</h3>
+            <div class="d-flex flex-row justify-content-evenly flex-wrap park_item   ms-3"></div>
+                
+                
+        </div>
+    </div>
+
+    <div class="park_details d-flex flex-row flex-wrap w-75 ms-3 mt-2 ">
+      
+    </div>
+
+    <div class="trails_container   w-100">
+      <div class="trail_names ms-3">
+          <h3>Trails</h3>
+          <div class="d-flex flex-row justify-content-evenly flex-wrap trail_item   ms-3"></div>
               
               
       </div>
   </div>
 
-  <div class="park_details d-flex flex-row flex-wrap w-75 ms-3 mt-2 ">
-    
-  </div>
-
-  <div class="trails_container   w-100">
-    <div class="trail_names ms-3">
-        <h3>Trails</h3>
-        <div class="d-flex flex-row justify-content-evenly flex-wrap trail_item   ms-3"></div>
-            
-            
-    </div>
-</div>
-
-<div class="trail_container   w-100">
-  <div class="trail_details d-flex flex-row flex-wrap w-75 ms-3 mt-2 ">
-
-  </div>
+  <div class="trail_container   w-100">
+    <div class="trail_details d-flex flex-row flex-wrap w-75 ms-3 mt-2 ">
   
+    </div>
+    
 </div>
+<!--end Richard-->
 
   <!-- Davids api Test code  -->
   <section>
