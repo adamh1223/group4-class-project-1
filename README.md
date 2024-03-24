@@ -24,7 +24,7 @@ A user may track which parks they've visited by checking the box found within th
 
 Personal accounts with login credentials can be created by clicking the "Login" link found at the top right of the page
 
-<p align="center"><img src="./assets/images/national_park_trail_finder.gif" alt=""></p>
+<p align="center"><img src="./assets/images/national_park_trail_finder.gif" alt="national park trail finder website"></p>
 
 
 ## Requirements
