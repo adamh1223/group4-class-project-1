@@ -110,6 +110,7 @@ function parkDetail(event) {
   fullName = parkItem.fullName;
   var url = parkItem.directionsUrl;
   var designation = parkItem.designation;
+  var directions = parkItem.directionsInfo;
   var description = parkItem.description;
   $(".park_details").children().remove();
 
@@ -118,6 +119,7 @@ function parkDetail(event) {
     <b>Full Name:</b> ${fullName}<br/>
     <b>URL:</b> <a href=${url}>${url}</a><br/>
     <b>Designation:</b> ${designation}<br/>
+    <b>Directions:</b> ${directions}<br/>
     <b>Description:</b> ${description}</b>
   </p>
   <div class="w-100 d-flex flex-row flex-wrap btn_park justify-content-end">
