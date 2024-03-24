@@ -108,6 +108,7 @@ function parkDetail(event) {
   );
   console.log(parkItem);
   fullName = parkItem.fullName;
+  var stateCode = parkItem.states;
   var url = parkItem.directionsUrl;
   var designation = parkItem.designation;
   var directions = parkItem.directionsInfo;
@@ -117,6 +118,7 @@ function parkDetail(event) {
   var content = `
   <p class="details_content flex-wrap text-wrap  border border-1 p-1 bg-dark text-light">
     <b>Full Name:</b> ${fullName}<br/>
+    <b>State Code:</b> ${stateCode}<br/>
     <b>URL:</b> <a href=${url}>${url}</a><br/>
     <b>Designation:</b> ${designation}<br/>
     <b>Directions:</b> ${directions}<br/>
@@ -124,13 +126,13 @@ function parkDetail(event) {
   </p>
   <div class="w-100 d-flex flex-row flex-wrap btn_park justify-content-end">
         <button class="btn btn-primary btn_home">Home</button>
-        <!--button class="btn btn-primary ms-1 btn_book">Book</button-->
+        <button class="btn btn-primary ms-1 btn_book">Book</button>
   </div>
   `;
 
   $(".park_details").append(content);
   $(".park_details>.btn_park>.btn_home").on("click", parkDisplay);
-
+  $(".park_details>.btn_park>.btn_book").on("click", bookings);
   getTrails();
 }
 function processParks(parksResult) {
@@ -168,6 +170,16 @@ function parkDisplay() {
   $(".btn_trail").children().hide();
 }
 
+function bookings() {
+  var result = parksResult.find((x) => x.parkCode == parkCode);
+  fullName = result.fullName;
+  bookingsStorage.push(parkCode);
+  console.log(bookingsStorage);
+  iBookings = bookingsStorage.length + 1;
+  localStorage.setItem("bookings", JSON.stringify(parkCode));
+  localStorage;
+}
+
 function parkAPI() {
   parkDisplay();
   var stateCode = $(".state_selector")
@@ -197,7 +209,7 @@ function parkAPI() {
 var trailName = "";
 var fullName = "";
 var iBookings = 0;
-var booking = [];
+var bookingsStorage = [];
 var parksResult = [];
 var trailsResult = [];
 
@@ -215,11 +227,6 @@ $(".trails_container").children().hide();
 $(".trail_container").children().hide();
 var buttonPark = $(".state_selector").children(".btn_container");
 buttonPark.on("click", parkAPI);
-//console.log($(".state_selector").children(".btn_container").children('input[name="paramName"]').val());
-console.log($(".state_selector>.btn_container>#btn_search").text());
-
-//var buttonTrail = $(".parkDetails").children(".btn_park");
-//buttonTrail.on("click", parkDisplay);
 
 //populate states into combobox
 var states = [
