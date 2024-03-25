@@ -1,5 +1,12 @@
 :root {
   --light-gray: #d3dae1;
+  --bronze: #c8a47e;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
 .c-item {
@@ -23,7 +30,7 @@
   background-color: var(--light-gray);
 }
 #tool {
-  height: 1200px;
+  height: 2000px;
   position: relative !important;
   color: white !important;
   background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("../images-project/muir-beach.jpg");
@@ -35,4 +42,7 @@
 .card-body {
   background-color: var(--light-gray);
   display: inline-block;
+}
+.option_box {
+
 }
