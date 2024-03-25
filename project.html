@@ -18,25 +18,31 @@
   <title>National Parks Planner</title>
 </head>
 <body>
+  <!--David's code-->
+  <!--Bootstrap Navbar-->
   <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
     <div class="container">
       <a class="navbar-brand text-uppercase" href="#">Parks Planner</a>
-
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <!--Bootstrap anchor link to main tool-->
             <a class="nav-link" href="#tool">Try it out</a>
           </li>
           <li class="nav-item">
+            <!--Bootstrap anchor link to FAQ-->
             <a class="nav-link" href="#faq">FAQ</a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
+  <!--End Navbar-->
+  <!--End David's code-->
 <main>
+  <!--Adam's code-->
   <section id="hero-carousel" class="carousel slide">
     <div class="carousel-indicators">
       <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -44,22 +50,24 @@
       <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
     </div>
     <div class="carousel-inner">
+      <!--Added class "c-item" to each carousel item for CSS targeting-->
       <div class="carousel-item active c-item">
-        <img src="./assets-project/images-project/waterfall.jpg" class="d-block w-100 c-img" alt="...">
+        <!--Set width to 100% and display: block-->
+        <img src="./assets-project/images-project/waterfall.jpg" class="d-block w-100 c-img" alt="waterfall">
         <div class="carousel-caption top-0 mt-5">
           <h1 class="display-1 fw-bolder text-uppercase">Parks planner</h1>
           <p class="fs-3 mt-5 text-uppercase">Adventure awaits</p>
         </div>
       </div>
       <div class="carousel-item c-item">
-        <img src="./assets-project/images-project/glacier-np.png" class="d-block w-100 c-img" alt="...">
+        <img src="./assets-project/images-project/glacier-np.png" class="d-block w-100 c-img" alt="glacier">
         <div class="carousel-caption top-0 mt-4">
           <p class="fs-3 mt-5 text-uppercase">Experience the epic views of</p>
           <h1 class="display-1 fw-bolder text-uppercase">Glacier National Park</h1>
         </div>
       </div>
       <div class="carousel-item c-item">
-        <img src="./assets-project/images-project/washington.png" class="d-block w-100 c-img" alt="...">
+        <img src="./assets-project/images-project/washington.png" class="d-block w-100 c-img" alt="washington">
         <div class="carousel-caption top-0 mt-4">
           <p class="fs-3 mt-5 text-uppercase">Explore the forests of</p>
           <h1 class="display-1 fw-bolder text-uppercase">The Pacific Northwest</h1>
@@ -76,14 +84,16 @@
     </button>
   </section>
   <section class="overview">
+    <!--Set the positioning of the overview container-->
     <div class="container h-100 d-flex align-items-center">
       <div class="row w-100 text-center fs-4">
         <div class="col-lg">
+          <!--Used Bootstrap Icons-->
           <i class="bi bi-airplane-fill me-2"></i>
           Amazing destinations        
         </div>
         <div class="col-lg">
-          <i class="bi bi-person-walking"></i>
+          <i class="bi bi-person-walking me-2"></i>
           Find trails at your favorite National Park
         </div>
         <div class="col-lg">
@@ -99,6 +109,7 @@
         <div class="col-lg">
         </div>
         <div class="col-lg">
+          <!--Anchor link to main tool-->
           <a type="button" class="btn btn-primary px-4 py-2 fs-5 mb-5 mt-4" href="#tool">Try Now</a>
         </div>
         <div class="col-lg">
@@ -107,6 +118,7 @@
       </div>
     </div>
   </section>
+  <!--End Adam's code-->
   <section id="tool">
     <!--Richard's code-->
     <h1 class="display-5 fw-bolder text-uppercase text-center mt-5">Plan your outdoor experience!</h1>
@@ -154,21 +166,19 @@
     <div class="trails_container   w-100">
       <div class="trail_names ms-3">
           <h3 class="text-center fw-bolder">Nearby Trails</h3>
-          <div class="d-flex flex-row justify-content-evenly flex-wrap trail_item ms-3 me-3"></div>
-              
-              
+          <div class="d-flex flex-row justify-content-evenly flex-wrap trail_item ms-3 me-3">           
+          </div>
       </div>
   </div>
 
   <!--Placeholder for the details after a view click on a particular trail-->
   <div class="trail_container   w-100">
     <div class="trail_details d-flex flex-row flex-wrap w-75 ms-3 mt-2 ">
-  
     </div>
-    
-</div>
-      
+  </div>
   </section>
+
+  <!--Adam, Porsche, Jenina, and Romy's code-->
   <section id="faq" class="py-md-5">
     <h2 class="my-5 text-center">FAQ</h2>
     <div class="container">
@@ -219,5 +229,6 @@
       <small class="text-white-50">&copy; Copyright by Team 4. All rights reserved.</small>
     </div>
   </footer>
+  <!--End Adam, Porsche, Jenina, and Romy's code-->
 </body>
 </html>
