@@ -112,6 +112,7 @@ function parkDetail_display() {
 //I probably place an extra step here after I encountered an error
 //just getting the global Park Code for the Park Detail function
 function bookingPark(event) {
+  $(".state_selector>.bookingsContainer>#collapse_bookings").modal("hide");
   bBook = true;
   parkCode = $(this).attr("id");
   parkDetail();
@@ -227,10 +228,10 @@ function reAddBookings() {
 
   //add the Boostrap collapsible elements with the number of parks booked
   var bookingCount = $(".state_selector>.bookingsContainer>.btn_bookings");
-  bookingCount.text("Click to expand/collapse bookings(" + iBookings + ")");
+  bookingCount.text("Click to view bookings(" + iBookings + ")");
 
   var newItem = $(
-    ".state_selector>.bookingsContainer>#collapse_bookings>.bookings"
+    ".state_selector>.bookingsContainer>#collapse_bookings>.modal-dialog>.modal-content>.modal-body"
   );
   var newDiv =
     "<div name=" +
@@ -243,7 +244,7 @@ function reAddBookings() {
   newItem.append(newDiv);
   //using the unique parkcode to set the click event when the booking is clicked
   clickItem = $(
-    ".state_selector>.bookingsContainer>#collapse_bookings>.bookings>#" +
+    ".state_selector>.bookingsContainer>#collapse_bookings>.modal-dialog>.modal-content>.modal-body>#" +
       parkCode
   );
   clickItem.on("click", bookingPark);
@@ -270,7 +271,7 @@ function bookings() {
 
   //refresh the Bootstrap  collapsible with the new count
   var bookingCount = $(".state_selector>.bookingsContainer>.btn_bookings");
-  bookingCount.text("Click to expand/collapse bookings(" + iBookings + ")");
+  bookingCount.text("Click to view bookings(" + iBookings + ")");
   bookingsStorage.push({
     stateCode: stateCode,
     parkCode: parkCode,
@@ -288,7 +289,7 @@ function bookings() {
   localStorage.setItem("parksResult", JSON.stringify(parksResult));
 
   var newItem = $(
-    ".state_selector>.bookingsContainer>#collapse_bookings>.bookings"
+    ".state_selector>.bookingsContainer>#collapse_bookings>.modal-dialog>.modal-content>.modal-body"
   );
   var newDiv =
     "<div name=" +
@@ -298,13 +299,12 @@ function bookings() {
     " class=text-primary>" +
     fullName +
     "</div>";
-  //add the new booking with the parkcode as an id
   newItem.append(newDiv);
-  var clickItem = $(
-    ".state_selector>.bookingsContainer>#collapse_bookings>.bookings>#" +
+  //using the unique parkcode to set the click event when the booking is clicked
+  clickItem = $(
+    ".state_selector>.bookingsContainer>#collapse_bookings>.modal-dialog>.modal-content>.modal-body>#" +
       parkCode
   );
-  //clicking activates the parkdetail processes and view
   clickItem.on("click", bookingPark);
 }
 

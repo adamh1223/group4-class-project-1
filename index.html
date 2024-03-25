@@ -167,14 +167,24 @@
       </section>
       <div class="bookingsContainer d-flex flex-column justify-content-end">
         
-        <button class="btn_bookings btn text-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_bookings" aria-expanded="false" aria-controls="collapseExample">
-          Click to expand/collapse bookings(0)
+        <button class="btn_bookings btn text-primary" type="button" data-bs-toggle="modal" data-bs-target="#collapse_bookings" aria-expanded="false" aria-controls="collapseExample">
+          Click to view bookings(0)
         </button>
-        
-        <div class="collapse" id="collapse_bookings">
-          <div class="bookings card card-body d-flex flex-column fs-6">
-            <p><b>Click below to view your destinations</b></p>
-          </div>
+                
+          <div class="authentication modal fade" id="collapse_bookings" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                
+                <div class="modal-body w-100">
+                  
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  
+                </div>
+              </div>
+            </div>
         </div>
       </div>
         
