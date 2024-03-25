@@ -1,3 +1,4 @@
+//Richard's code
 //view for trails detail using JQuery Navigation on trees
 function trailDetailDisplay() {
   $(".trail_container").children().show();
