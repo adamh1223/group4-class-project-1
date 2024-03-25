@@ -116,7 +116,7 @@
   </section>
   <!--End Adam's code-->
   <section id="tool">
-    <!--Richard's code-->
+    <!--Richard and Adam's code-->
     <h1 class="display-5 fw-bolder text-uppercase text-center mt-5">Plan your outdoor experience!</h1>
     <div class="w-100 state_selector d-flex flex-row mt-5 mb-3 text-center">
       <div class="me-5 mt-2  option_box">
@@ -131,20 +131,32 @@
       </div>
       <div class="bookingsContainer d-flex flex-column justify-content-end">
         
-        <button class="btn_bookings btn text-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_bookings" aria-expanded="false" aria-controls="collapseExample">
-          Click to expand/collapse bookings(0)
+        <button class="btn_bookings btn text-primary" type="button" data-bs-toggle="modal" data-bs-target="#collapse_bookings" aria-expanded="false" aria-controls="collapseExample">
+          Click to view bookings(0)
         </button>
         
-        <div class="collapse" id="collapse_bookings">
-          <div class="bookings card card-body bg-dark text-light d-flex flex-column fs-6">
-            <p><b>Click below to view your destinations</b></p>
+        <div class="authentication modal fade" id="collapse_bookings" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5 fw-bold text-dark" id="exampleModalLabel">Your Bookings</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body w-100">
+                  
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
       </div>
         
     </div>
 
-    <div class="park_container   w-100">
+    <div class="park_container w-100">
         <div class="park_names ms-3">
             <h3 class="text-center mt-5 mb-4 fw-bolder">National Parks</h3>
             <!--Placeholder for the National Parks-->
