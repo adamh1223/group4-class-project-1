@@ -1,0 +1,47 @@
+/*
+CSS worked on by Adam, Porsche, Jenina, romy
+*/
+
+/*Created root directory for repeat-use colors*/
+:root {
+  --light-gray: #d3dae1;
+  --bronze: #c8a47e;
+}
+/*Universal selector*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+/*Carousel items*/
+.c-item {
+  height: 700px;
+}
+/*Carousel images*/
+.c-img {
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.6);
+}
+/*Overview section*/
+.overview {
+  height: 130px;
+  background-color: var(--light-gray);
+}
+/*Adjust height and color of try-now-container*/
+.try-now-container {
+  height: 60px;
+  background-color: var(--light-gray);
+}
+/* #tool is the main tool we created. Here we are styling the page on which we will display the results */
+#tool {
+  height: 1800px;
+  position: relative !important;
+  color: white !important;
+  background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("../images-project/muir-beach.jpg");
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  background-size: cover;
+}
