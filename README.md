@@ -1,4 +1,4 @@
-# National Park Trail Finder
+# National Park Planner
 
 ## Table of Contents
 
@@ -13,19 +13,19 @@
 ## Description
 The National Parks Planner is a server-side API driven web app to provide users with a list of national parks of a selected state and trails in the the selected area.
 
-Utilization of local storage allows users to create a personal account and track which parks they have visited.
+Utilization of local storage allows users to create a personal account and track which parks they would like to visit.
 
 Future development of this app would include expansion of the personal account, allowing a user to store information on parks they would like to visit and plan an itinerary for that park.
 
 ## Usage
-Upon opening the [National Park Planner](), the user is presented with an introduction to the page. Clicking the "Try Now" button in the welcome section directs the user to the search form where they may select a U.S. state. Clicking the "Search" button generates a list of national parks within the selected state, links to the official page of the respective park, and trails in/near that park.
+Upon opening the [National Park Planner](), the user is presented with an introduction to the page. Clicking the "Try It Out" link on the upper right of the page directs the user to the search form where they may select a U.S. state. Clicking the "Search" button generates a list of national parks within the selected state, links to the official page of the respective park, and trails in/near that park.
 
 <p align="center"><img src="./assets/images/national_park_trail_finder.gif" alt="national park trail finder website"></p>
 
 
 ## Requirements
 
-To operate the National Park Trail Finder, a user must have a browser that supports JavaScript and has it enabled.
+To operate the National Park Planner, a user must have a browser that supports JavaScript and has it enabled.
 
 ## Technologies Used
 
@@ -57,4 +57,4 @@ Built with:
 ## License
 N/A
 
-### <p align="center">[Back to Top](#national-park-trail-finder)</p>
+### <p align="center">[Back to Top](#national-park-planner)</p>
