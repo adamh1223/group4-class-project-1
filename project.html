@@ -25,22 +25,6 @@
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <!--start dropdown-->
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Dropdown
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">About this</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
-          </li>
-      </div>
-      <!--end dropdown-->
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
             <a class="nav-link" href="#tool">Try it out</a>
@@ -100,7 +84,7 @@
         </div>
         <div class="col-lg">
           <i class="bi bi-person-walking"></i>
-          Find the right trails for you
+          Find trails at your favorite National Park
         </div>
         <div class="col-lg">
           <i class="bi bi-patch-check-fill me-2"></i>
@@ -115,7 +99,7 @@
         <div class="col-lg">
         </div>
         <div class="col-lg">
-          <a type="button" class="btn btn-primary px-4 py-2 fs-5 mb-5 mt-2" href="#tool">Try Now</a>
+          <a type="button" class="btn btn-primary px-4 py-2 fs-5 mb-5 mt-4" href="#tool">Try Now</a>
         </div>
         <div class="col-lg">
           
@@ -124,25 +108,65 @@
     </div>
   </section>
   <section id="tool">
+    <!--Richard's code-->
     <h1 class="display-5 fw-bolder text-uppercase text-center mt-5">Plan your outdoor experience!</h1>
-    <div class="container question">
-      <p class="display-6 mt-3">Which state are you exploring?</p>
-      <select class="form-select w-25" id="state-input" aria-label="Default select example">
-        <option value="">Select state</option>
-      </select>
+    <div class="w-100 state_selector d-flex flex-row mt-5 mb-3 text-center">
+      <div class="me-5 mt-2  option_box">
+        <!--Combo box populated with state code values and state name text-->
+          <label class="text-center fw-bold ms-5 me-3"  for="state_list" >Which state are you exploring?</label>
+          <select id="states" name="state_list">
+          </select>
+        </div>
+      <!--Bootstrap collapsible to display National parks on your booking list-->
+      <div class="btn_container">
+          <button id="btn_search" class="btn btn-primary btn-md">Search</button>
+      </div>
+      <div class="bookingsContainer d-flex flex-column justify-content-end">
+        
+        <button class="btn_bookings btn text-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_bookings" aria-expanded="false" aria-controls="collapseExample">
+          Click to expand/collapse bookings(0)
+        </button>
+        
+        <div class="collapse" id="collapse_bookings">
+          <div class="bookings card card-body bg-dark text-light d-flex flex-column fs-6">
+            <p><b>Click below to view your destinations</b></p>
+          </div>
+        </div>
+      </div>
+        
     </div>
-    <div class="container">
-      <button onclick="searchParks()" class="btn btn-primary mt-4">Search</button>
-    </div>
-    <br>
-    <div id="park-list" class="mt-4"></div>
-    </div>
-    <div class="paginationContainer">
-      <div id="pagination"></div>
-    </div>
-  </section>
-  <section>
 
+    <div class="park_container   w-100">
+        <div class="park_names ms-3">
+            <h3 class="text-center mt-5 mb-4 fw-bolder">National Parks</h3>
+            <!--Placeholder for the National Parks-->
+            <div class="d-flex flex-row justify-content-evenly flex-wrap park_item ms-3 me-3"></div>
+                
+                
+        </div>
+    </div>
+    <!--Placeholder that provides Detail after clicking on the view button for the particular park-->
+    <div class="park_details d-flex flex-row flex-wrap w-75 ms-3 mt-2 ">
+      
+    </div>
+
+    <!--Placeholder for trails located within a 25 mi radius of the park-->
+    <div class="trails_container   w-100">
+      <div class="trail_names ms-3">
+          <h3 class="text-center fw-bolder">Nearby Trails</h3>
+          <div class="d-flex flex-row justify-content-evenly flex-wrap trail_item ms-3 me-3"></div>
+              
+              
+      </div>
+  </div>
+
+  <!--Placeholder for the details after a view click on a particular trail-->
+  <div class="trail_container   w-100">
+    <div class="trail_details d-flex flex-row flex-wrap w-75 ms-3 mt-2 ">
+  
+    </div>
+    
+</div>
       
   </section>
   <section id="faq" class="py-md-5">
@@ -169,7 +193,7 @@
           </h2>
           <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
             <div class="accordion-body">
-              Click "Nearby Trails" and you'll see directions to the trail and an address.
+              Click "View" on a National Park you're interested in and then click "View" on a trail you're interested in. 
             </div>
           </div>
         </div>
@@ -181,7 +205,7 @@
           </h2>
           <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
             <div class="accordion-body">
-              After making your search, you can click on the title of the NPS location to find more information about it
+              After making your search, you can click on the URL of the NPS location to find more information about it.
             </div>
           </div>
         </div>
