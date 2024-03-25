@@ -30,7 +30,7 @@
   background-color: var(--light-gray);
 }
 #tool {
-  height: 2000px;
+  height: 1800px;
   position: relative !important;
   color: white !important;
   background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("../images-project/muir-beach.jpg");
