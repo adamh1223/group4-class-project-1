@@ -60,9 +60,10 @@ Built with:
 
 
 ## Link to Application
-https://adamh1223.github.io/group4-class-project-1/
+https://adamh1223.github.io/parks-planner/
 
 ## Link to GitHub Repository
-https://github.com/adamh1223/group4-class-project-1.git
+https://github.com/adamh1223/parks-planner
+
 
 ### <p align="center">[Back to Top](#parks-planner)</p> 
