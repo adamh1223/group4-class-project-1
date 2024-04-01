@@ -63,6 +63,6 @@ Built with:
 https://adamh1223.github.io/parks-planner/
 
 ## Link to GitHub Repository
-https://github.com/adamh1223/parks-planner.git
+https://github.com/adamh1223/parks-planner
 
 ### <p align="center">[Back to Top](#parks-planner)</p> 
