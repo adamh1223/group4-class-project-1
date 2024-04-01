@@ -59,7 +59,10 @@ Built with:
 * Richard Thomas
 
 
-## License
-N/A
+## Link to Application
+https://adamh1223.github.io/group4-class-project-1/
+
+## Link to GitHub Repository
+https://github.com/adamh1223/group4-class-project-1.git
 
 ### <p align="center">[Back to Top](#parks-planner)</p> 
