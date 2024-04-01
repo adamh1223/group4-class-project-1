@@ -20,7 +20,7 @@ Future development of this app would include expansion of the personal account, 
 ![Alt text](assets-project/images-project/markdown1.png)
 
 ## Usage
-Upon opening the [Parks Planner](https://adamh1223.github.io/group4-class-project-1/), the user is presented with an introduction to the page. Clicking the "Try It Out" link on the upper right of the page directs the user to the search form where they may select a U.S. state. Clicking the "Search" button generates a list of national parks within the selected state, links to the official page of the respective park, and trails in/near that park.
+Upon opening the [Parks Planner](https://adamh1223.github.io/parks-planner/), the user is presented with an introduction to the page. Clicking the "Try It Out" link on the upper right of the page directs the user to the search form where they may select a U.S. state. Clicking the "Search" button generates a list of national parks within the selected state, links to the official page of the respective park, and trails in/near that park.
 
 
 ![Alt text](assets-project/images-project/markdown2.png)
@@ -60,9 +60,9 @@ Built with:
 
 
 ## Link to Application
-https://adamh1223.github.io/group4-class-project-1/
+https://adamh1223.github.io/parks-planner/
 
 ## Link to GitHub Repository
-https://github.com/adamh1223/group4-class-project-1.git
+https://github.com/adamh1223/parks-planner.git
 
 ### <p align="center">[Back to Top](#parks-planner)</p> 
