@@ -1,3 +1,26 @@
+//Modal Script Begins
+var modalContent = document.getElementById("modal_body");
+var mainContent = document.getElementById("container");
+var headerContent = document.getElementById("header_content");
+var modalButton = document.getElementById("modal_button");
+
+//Open the modal on page load
+document.onvisibilitychange = () => {
+  if (document.visibilityState === "hidden") {
+    modalContent.style.display = "block";
+    mainContent.style.filter = "blur(4px)";
+    headerContent.style.filter = "blur(4px)";    
+};
+}
+
+//Close the modal on button click
+modalButton.onclick = function closeModal() {
+    modalContent.style.display = "none";
+    mainContent.style.filter = "blur(0px)";
+    headerContent.style.filter = "blur(0px)";
+};
+//Modal Script Ends
+
 //Richard's code
 //view for trails detail using JQuery Navigation on trees
 function trailDetailDisplay() {
@@ -60,7 +83,7 @@ function processTrails() {
     trailName = trailsResult[i].name;
 
     trailList.append(
-      "<div class='w-25 d-flex bg-dark text-light flex-column border border-1 p-2 justify-content-between' id=" +
+      "<div class='w-25 d-flex bg-dark text-light flex-column border border-1 m-2 p-2 justify-content-between' id=" +
         i +
         "'><p>" +
         trailName +
@@ -190,7 +213,7 @@ function processParks(parksResult) {
     latitude = parksResult[i].latitude;
 
     parkList.append(
-      "<div class='w-25 mb-2 bg-dark text-light d-flex flex-column border border-1 p-2 justify-content-between' id=" +
+      "<div class='w-25 m-2 bg-dark text-light d-flex flex-column border border-1 p-2 justify-content-between' id=" +
         parkCode +
         "'><p>" +
         fullName +
